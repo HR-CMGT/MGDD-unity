@@ -6,7 +6,7 @@ Asset files for Unity Introduction lesson - Game Design and Development
 
 - [Download Unity](https://unity3d.com/get-unity/download) 
 - Create a new project in Unity. Choose 2D
-- Download the zip file from this repository and place the files from the zip in your project folder
+- Download the zip file from this repository. Place the Assets folder in your game project, overwriting the old Assets folder.
 
 #### Adding your own graphics
 - Drag some of your own textures into the textures folder in Unity
