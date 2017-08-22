@@ -1,6 +1,6 @@
 # Unity Introduction
 
-Files for Unity Introduction lesson - Game Design and Development
+Asset files for Unity Introduction lesson - Game Design and Development
 
 ## How to use
 
