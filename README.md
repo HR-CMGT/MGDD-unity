@@ -68,3 +68,4 @@ You can create 2D sprites easily by dragging images onto the stage or into the s
 #### Adding sprites to the stage by code
 - Add an explosion when there is a collision
 - Add a bullet when the player presses space
+- Add a collision layer, so that players can't collide with each other or with their own bullets
