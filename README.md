@@ -8,6 +8,8 @@ Asset files for Unity Introduction lesson - Game Design and Development
 - Create a new project in Unity. Choose 2D
 - Download the zip file from this repository. Place the Assets folder in your game project, overwriting the old Assets folder.
 
+## Your first 2D game
+
 #### Adding your own graphics
 - Drag some of your own textures into the textures folder in Unity
 
@@ -15,10 +17,11 @@ Asset files for Unity Introduction lesson - Game Design and Development
 - Click on the **scene panel** and create two empty gameobjects: background and foreground
 - Give the background a Z position of 10
 
-#### Creating sprites
-You can create 2D sprites easily by dragging images onto the stage or into the scene panel.
+#### Creating 2D sprites
+You can create 2D easily by dragging images onto the stage or into the scene panel.
 - Drag the space image on to the background gameobject in the scene panel.
 - Drag one spaceship, one asteroid and one enemy onto the foreground gameobject in the scene panel.
+- You can create multiple sprites from one image by using the sprite editor - this is called a spritesheet.
 
 #### Adjust the camera to the size of the background
 - Set the camera size to 3. This is the height of the background image / 100.
