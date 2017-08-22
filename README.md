@@ -53,8 +53,18 @@ You can create 2D sprites easily by dragging images onto the stage or into the s
 - Open the **Player script** in the code editor and remove the comments in one of the two lines. Check what happens when the player collides with something.
 - Can you make the asteroids collide with the enemies?
 
+#### Multiplayer
+- The player script responds to key presses. Make these keys public variables.
+- Now add two player ships to the game. Give each ship their own keyboard controls.
+
 #### Score
 - Check the Update function in the player code. Place a log message there: `Debug.Log('flying around')`
 - Let's add a score counter : the player gets points for staying alive by avoiding enemies and asteroids
 - Now log the score before the player is destroyed.
 - Finally, we want to display the score on screen instead of in the debug window.
+
+### Bonus lesson
+
+#### Adding sprites to the stage by code
+- Add an explosion when there is a collision
+- Add a bullet when the player presses space
