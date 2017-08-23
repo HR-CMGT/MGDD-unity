@@ -67,9 +67,14 @@ You can create 2D easily by dragging images onto the stage or into the scene pan
 - Now log the score before the player is destroyed.
 - Finally, we want to display the score on screen instead of in the debug window.
 
-### Bonus lesson
+#### Levels
+- Duplicate the scene. 
+- In the new scene, place more enemies and asteroids. You have levels now!
+
+### Bonus
 - Make the space background scroll
 - If an enemy leaves the screen on the left side, place it back on the right side
 - Add an explosion when there is a collision
 - Add a bullet when the player presses space
+- Switch to the new level once your score is 1000
 
