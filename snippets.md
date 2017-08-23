@@ -7,10 +7,11 @@ void OnBecameInvisible() {
 }
 ```
 
-###How to make a scrolling background
+### How to make a scrolling background
 
 **code**
 
+```
 public class ScrollBackground : MonoBehaviour {
 
 	public float speed = 0.5f;
@@ -20,6 +21,7 @@ public class ScrollBackground : MonoBehaviour {
 		GetComponent<Renderer>().material.mainTextureOffset = offset;
 	}
 }
+```
 
 **gameobject**
 
