@@ -59,6 +59,7 @@ You can create 2D easily by dragging images onto the stage or into the scene pan
 #### Multiplayer
 - The player script responds to key presses. Make these keys public variables.
 - Now add two player ships to the game. Give each ship their own keyboard controls.
+- Add a collision layer, so that players can't collide with each other
 
 #### Score
 - Check the Update function in the player code. Place a log message there: `Debug.Log('flying around')`
@@ -67,8 +68,8 @@ You can create 2D easily by dragging images onto the stage or into the scene pan
 - Finally, we want to display the score on screen instead of in the debug window.
 
 ### Bonus lesson
-
-#### Adding sprites to the stage by code
+- Make the space background scroll
+- If an enemy leaves the screen on the left side, place it back on the right side
 - Add an explosion when there is a collision
 - Add a bullet when the player presses space
-- Add a collision layer, so that players can't collide with each other or with their own bullets
+
