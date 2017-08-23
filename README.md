@@ -72,9 +72,10 @@ You can create 2D easily by dragging images onto the stage or into the scene pan
 - In the new scene, place more enemies and asteroids. You have levels now!
 
 #### Finishing the game
-- Make the space background scroll
+- Open the [code snippets page](./snippets.md)
 - If an enemy leaves the screen on the left side, place it back on the right side
 - Switch to the new level once your score is 1000
+- Make the space background scroll
 
 ### Bonus
 Adding gameobjects while the game is running. Copy the example code.
