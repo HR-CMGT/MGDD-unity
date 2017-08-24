@@ -43,6 +43,7 @@ The camera watches a small part of this world. The camera coordinates are **0,0 
 If we want to know if a gameobject is still within the camera view, we have to compare those two coordinate systems.
 
 **Check if a gameobject is within camera view**
+
 We translate the gameobject position in the world to the camera position
 ```
 void Update() {
@@ -56,6 +57,7 @@ void Update() {
 }
 ```
 **Place a gameobject to the right of the camera view**
+
 We translate the camera position to a world position, so we can place the object there
 ```
 void Start() {
@@ -133,9 +135,9 @@ void FixedUpdate()
 
 #### Movement without physics
 
-Set the X,Y position of an object. The third parameter Z is not used.
+Set the X,Y position of an object. The third parameter of Vector3 can be left out, since we work in 2D we can always leave it at 0.
 ```
-transform.position = new Vector3(4, 4, 0);
+transform.position = new Vector3(4, 4);
 ```
 Use `translate` to animate objects that don't have a rigidbody2D.
 ```
@@ -169,11 +171,47 @@ void Resume() {
    Time.timeScale = 1;
 }
 ```
-
-#### A global script
-Create an empty gameobject in the scene panel and name it `scripts`. Attach this global script component. This code will run regardless of what is happening on screen. You can use it to keep track of player progress or keep a highscore. If you add the line `asdf` the script will not be deleted even when you leave the scene. 
+#### Accessing other gameobjects
+Your script component can search for other gameobjects in the scene. If an enemy ship would want to find the player gameobject we could use:
+```
+GameObject player = GameObject.Find("ship");
+Debug.Log("the player position is " + player.transform)
+```
+You can also find the script component of the player gameobject and then call a function
+```
+Shipscript pl = GameObject.Find("ship").GetComponent("Shipscript") as Shipscript;
+pl.DoSomething();
 ```
 
+If you add tags to your prefab components in the Unity editor, you can search for those objects too. Note that the search function returns an array. You can loop through the array with the `foreach` function.
+```
+GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+foreach(object e in enemies) {
+	Debug.Log ("found enemy " + e);
+}
+```
+
+#### A global script
+Create an empty gameobject in the scene panel and name it `scripts`. Attach this global script component. This code will run regardless of what is happening on screen. You can use it to keep track of player progress or keep a highscore. If you add  `DontDestroyOnLoad` the script will keep updating even when you leave the scene. 
+```
+using UnityEngine;
+using System.Collections;
+
+public class Manager : MonoBehaviour {
+    public int score = 0;
+    void Awake(){
+	DontDestroyOnLoad(this);
+    }
+    void AddScore(n:int){
+	score += n;
+    }
+}
+```
+Your gameobjects can access the manager script by searching for it and then calling its functions:
+```
+Manager m = GameObject.Find("scripts").GetComponent("Manager") as Manager;
+m.score = 10;
+m.AddScore(10);
 ```
 
 #### Scrolling background
