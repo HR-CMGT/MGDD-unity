@@ -19,7 +19,7 @@ public class DemoScript : MonoBehaviour {
 	}
 }
 ```
-#### Accessing components
+### Accessing components
 A gameobject can access its own components with `GetComponent`:
 ```
 Rigidbody2D body = GetComponent<Rigidbody2D>();
@@ -39,14 +39,14 @@ void Update(){
 
 
 
-#### Remove gameObject after it leaves the screen
+### Remove gameObject after it leaves the screen
 ```
 void OnBecameInvisible() {
     Destroy (gameObject);
 }
 ```
 
-#### Click the object
+### Click the object
 The object needs to have a Collider2D to register mouse clicks.
 ```
 void OnMouseDown(){
@@ -54,7 +54,7 @@ void OnMouseDown(){
 }
 ```
 
-#### World and camera space
+### World and camera space
 Gameobjects live in a `world space`. The center of this world is 0,0 and the world reaches out in all directions infinitely.
 
 The camera watches a small part of this world. The camera coordinates are **0,0 (left, top)** to **1,1 (bottom, right)**. This is really useful if we work with different sizes of screens because we don't need to know precisely what the size of the screen is. 
@@ -84,7 +84,7 @@ void Start() {
 }
 ```
 
-#### Switching scenes
+### Switching scenes
 
 Create a new scene named 'gameover'. We'll switch to the gameover scene after a collision.
 
@@ -94,7 +94,7 @@ void OnCollisionEnter2D(Collision2D coll) {
     SceneManager.LoadScene("gameover");
 }
 ```
-#### Pressing CTRL button
+### Pressing CTRL button
 ```
 void Update() {
 	if (Input.GetButtonDown("Fire1")) {
@@ -102,7 +102,7 @@ void Update() {
 	}
 }
 ```
-#### Fire a bullet
+### Fire a bullet
 Add this code to the player ship. We'll use a public variable for the gameobject (a bullet) that is going to be added. In the editor, drag the bullet prefab into the variable field.
 ```
 public Transform bullet;
@@ -115,7 +115,7 @@ void FireRocket () {
 }
 ```
 
-#### Automatically repeating a function
+### Automatically repeating a function
 You could use this to keep adding asteroids to the game. The asteroids should also remove themselves when they exit the screen.
 ```
 public Transform asteroid;
@@ -128,7 +128,7 @@ void SpawnAsteroid() {
 ```
 
 
-#### Movement with physics
+### Movement with physics
 
 If the gameobject has a rigidbody2D, you can set the initial velocity in the start method. In our space game, there is no gravity or friction, so the object will keep the same velocity:
 ```
@@ -152,7 +152,7 @@ void FixedUpdate()
 
 ```
 
-#### Movement without physics
+### Movement without physics
 
 Set the X,Y position of an object. The third parameter of Vector3 can be left out, since we work in 2D we can always leave it at 0.
 ```
@@ -166,12 +166,12 @@ void Update() {
 }
 ```
 
-#### Rotate in direction of another gameobject
+### Rotate in direction of another gameobject
 ```
 transform.right = targetobject.position - transform.position;
 ```
 
-#### Pause game
+### Pause game
 ```
 void Pause() {
    Time.timeScale = 0;
@@ -181,7 +181,7 @@ void Resume() {
    Time.timeScale = 1;
 }
 ```
-#### Accessing other gameobjects
+### Accessing other gameobjects
 Your script component can search for other gameobjects in the scene. If an enemy ship would want to find the player gameobject we could use:
 ```
 GameObject player = GameObject.Find("ship");
@@ -201,7 +201,7 @@ foreach(object e in enemies) {
 }
 ```
 
-#### A global script
+### A global script
 Create an empty gameobject in the scene panel and name it `scripts`. Attach this global script component. This code will run regardless of what is happening on screen. You can use it to keep track of player progress or keep a highscore. If you add  `DontDestroyOnLoad` the script will keep updating even when you leave the scene. 
 ```
 using UnityEngine;
@@ -224,7 +224,7 @@ m.score = 10;
 m.AddScore(10);
 ```
 
-#### Scrolling background
+### Scrolling background
 
 The following script checks the start position of an image, and scrolls it to the left for its own width in pixels. Then places itself back at its start position.
 
@@ -247,7 +247,7 @@ public class ScrollImage : MonoBehaviour {
 }
 ```
 
-#### Use 3D texture wrap to create a scrolling background
+### Use 3D texture wrap to create a scrolling background
 This code uses a 3D feature to wrap an image around an object, creating a scrolling effect.
 ```
 public class ScrollBackground : MonoBehaviour {
