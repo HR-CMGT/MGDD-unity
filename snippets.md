@@ -188,7 +188,7 @@ void Update() {
 ```
 
 ### Rotate and move in direction of another gameobject
-You could also use this code to make an object follow the mouse
+You can use this code to make a guided missile, or to make an object follow the mouse
 ```
 // face towards another gameobject
 transform.right = targetobject.position - transform.position;
