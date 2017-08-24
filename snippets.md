@@ -1,4 +1,24 @@
 ## Code Snippets for Lesson 1
+Feel free to experiment! You could start by adding this empty script to a gameobject, and then add some of the examples.
+```
+using UnityEngine;
+using System.Collections;
+
+public class DemoScript : MonoBehaviour {
+
+	// this is where you put variables
+	public float score = 1f;
+
+	// every object has a start and update function
+	void Start() {
+	     Debug.Log("My score is " + score);
+	}
+
+	void Update() {
+             Debug.Log("I am updating!");
+	}
+}
+```
 
 #### Remove gameObject after it leaves the screen
 ```
@@ -7,11 +27,45 @@ void OnBecameInvisible() {
 }
 ```
 
-#### Reset gameobject position after it leaves the screen
+#### Click the object
+The object needs to have a Collider2D to register mouse clicks.
+```
+void OnMouseDown(){
+	Debug.Log("you clicked me!");
+}
+```
+
+#### World and camera space
+Gameobjects live in a `world space`. The center of this world is 0,0 and the world reaches out in all directions infinitely.
+
+The camera watches a small part of this world. The camera coordinates are **0,0 (left, top)** to **1,1 (bottom, right)**. This is really useful if we work with different sizes of screens because we don't need to know precisely what the size of the screen is. 
+
+If we want to know if a gameobject is still within the camera view, we have to compare those two coordinate systems.
+
+**Check if a gameobject is within camera view**
+We translate the gameobject position in the world to the camera position
+```
+void Update() {
+	Vector3 pos = Camera.main.WorldToViewportPoint(transform.position);
+	if(pos.x < 0.0) {
+		Debug.Log("I am left of the camera's view.");	
+	}
+	if(pos.x > 1.0) {
+		Debug.Log("I am right of the camera's view.");	
+	}
+}
+```
+**Place a gameobject to the right of the camera view**
+We translate the camera position to a world position, so we can place the object there
+```
+void Start() {
+        transform.position = Camera.main.ViewportToWorldPoint(new Vector3(1,0));
+}
+```
 
 #### Switching scenes
 
-Create a new scene named 'gameover'.
+Create a new scene named 'gameover'. We'll switch to the gameover scene after a collision.
 
 ```
 using UnityEngine.SceneManagement;
@@ -19,6 +73,39 @@ void OnCollisionEnter2D(Collision2D coll) {
     SceneManager.LoadScene("gameover");
 }
 ```
+#### Pressing CTRL button
+```
+void Update() {
+	if (Input.GetButtonDown("Fire1")) {
+	    Debug.Log("Fire a bullet!");
+	}
+}
+```
+#### Fire a bullet
+Add this code to the player ship. We'll use a public variable for the gameobject (a bullet) that is going to be added. In the editor, drag the bullet prefab into the variable field.
+```
+public Transform bullet;
+void FireRocket () {
+	Vector3 offset = new Vector3(0.6f, 0);
+	Transform mybullet = (Transform) Instantiate(bullet, transform.position + offset , transform.rotation);
+
+	// this code puts the gameobject under the same parent gameobject (foreground or background)
+	mybullet.transform.parent = transform.parent;
+}
+```
+
+#### Automatically repeating a function
+You could use this to keep adding asteroids to the game. The asteroids should also remove themselves when they exit the screen.
+```
+public Transform asteroid;
+void Start() {
+    InvokeRepeating("SpawnAsteroid", 1F, 0.8F);
+}
+void SpawnAsteroid() {
+    Instantiate(asteroid, new Vector3(4.3f,Random.value * 6-3, 0), Quaternion.identity) as GameObject;
+}
+```
+
 
 #### Movement with physics
 
@@ -63,9 +150,6 @@ void Update() {
 transform.right = targetobject.position - transform.position;
 ```
 
-
-
-
 #### Store rigidbody in a variable
 ```
 private Rigidbody2D rb;
@@ -84,6 +168,12 @@ void Pause() {
 void Resume() {
    Time.timeScale = 1;
 }
+```
+
+#### A global script
+Create an empty gameobject in the scene panel and name it `scripts`. Attach this global script component. This code will run regardless of what is happening on screen. You can use it to keep track of player progress or keep a highscore. If you add the line `asdf` the script will not be deleted even when you leave the scene. 
+```
+
 ```
 
 #### Scrolling background
