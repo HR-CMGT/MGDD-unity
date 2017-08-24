@@ -19,6 +19,25 @@ public class DemoScript : MonoBehaviour {
 	}
 }
 ```
+#### Accessing components
+A gameobject can access its own components with `GetComponent`:
+```
+Rigidbody2D body = GetComponent<Rigidbody2D>();
+MoveScript move = GetComponent<MoveScript>();
+```
+You can store the reference in a variable for readabilty
+```
+private Rigidbody2D body;
+
+void Start() {
+    body = GetComponent<Rigidbody2D>();
+}
+void Update(){
+    body.velocity = new Vector3(2,2);
+}
+```
+
+
 
 #### Remove gameObject after it leaves the screen
 ```
@@ -150,15 +169,6 @@ void Update() {
 #### Rotate in direction of another gameobject
 ```
 transform.right = targetobject.position - transform.position;
-```
-
-#### Store rigidbody in a variable
-```
-private Rigidbody2D rb;
-
-void Start() {
-    rb = GetComponent<Rigidbody2D>();
-}
 ```
 
 #### Pause game
