@@ -190,7 +190,11 @@ void Update() {
 ### Rotate and move in direction of another gameobject
 You could also use this code to make an object follow the mouse
 ```
+// face towards another gameobject
 transform.right = targetobject.position - transform.position;
+
+// move in the direction of facing
+transform.Translate(Vector3.right * 0.02f);
 ```
 
 ### Pause game
