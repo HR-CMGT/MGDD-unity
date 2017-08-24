@@ -71,14 +71,12 @@ You can create 2D easily by dragging images onto the stage or into the scene pan
 - Duplicate the scene. 
 - In the new scene, place more enemies and asteroids. You have levels now!
 
-#### Finishing the game
-- Open the [code snippets page](./snippets.md)
-- If an enemy leaves the screen on the left side, place it back on the right side
-- Switch to the new level once your score is 1000
-- Make the space background scroll
+### Finishing the game
+Open the [code snippets page](./snippets.md) and try to add some or all of the following functionality:
 
-### Bonus
-Adding gameobjects while the game is running. Copy the example code.
-- Add an explosion when there is a collision
-- Add a bullet when the player presses space
-
+- If an enemy leaves the screen on the left side, place it back on the right side.
+- Switch to the new level once your score is 1000.
+- Make the space background scroll.
+- Keep adding asteroids to the right side of the screen, remove them when they leave the screen.
+- Add a bullet when the player presses space.
+- Let the bullet collide with enemies and asteroids.
