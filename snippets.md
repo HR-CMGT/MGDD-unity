@@ -94,14 +94,35 @@ void OnCollisionEnter2D(Collision2D coll) {
     SceneManager.LoadScene("gameover");
 }
 ```
-### Pressing CTRL button
+### Player input
+Fire1, Fire2, Fire3 are mapped to Control, Option (Alt), and Command
 ```
-void Update() {
-	if (Input.GetButtonDown("Fire1")) {
-	    Debug.Log("Fire a bullet!");
-	}
+if (Input.GetButtonDown("Fire1")) {
+    Debug.Log("You pressed CTRL!");
+}
+if (Input.GetKeyDown("space")) {
+    Debug.Log("You pressed Space!");
 }
 ```
+Horizontal and Vertical input respond to the W,A,S,D keys and the cursor keys. They return values from -1 to 1. 
+```
+float xspeed = Input.GetAxis("Horizontal");
+float yspeed = Input.GetAxis("Vertical"); 
+velocity = new Vector2(xspeed, yspeed);
+```
+Check any key you want, for example to make a player move on W,A,S,D but not on the cursor keys.
+```
+if (Input.GetKey (KeyCode.W) {
+}
+if (Input.GetKey (KeyCode.A) {
+}
+```
+Mouse acceleration and position
+```
+float mouseXspeed = Input.GetAxis("Mouse X");
+Vector2 mousePosition = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
+```
+
 ### Fire a bullet
 Add this code to the player ship. We'll use a public variable for the gameobject (a bullet) that is going to be added. In the editor, drag the bullet prefab into the variable field.
 ```
@@ -166,7 +187,8 @@ void Update() {
 }
 ```
 
-### Rotate in direction of another gameobject
+### Rotate and move in direction of another gameobject
+You could also use this code to make an object follow the mouse
 ```
 transform.right = targetobject.position - transform.position;
 ```
