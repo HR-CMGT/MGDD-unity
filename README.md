@@ -48,8 +48,8 @@ You can create 2D easily by dragging images onto the stage or into the scene pan
 #### More game objects!
 - Create a prefab for the asteroid in exactly the same way as for the enemy ship
 - You can even use the **Move script** for the asteroid
-- Create the player ship, add the rigidbody2d and the boxcollider2d
-- Experiment with the shape of the boxcollider2d
+- Create the player ship, add a Rigidbody2D and a Boxcollider2D
+- Experiment with the shape of the Boxcollider2D
 - Add the **Player script** to the player and run the game
 
 #### Collisions
