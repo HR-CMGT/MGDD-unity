@@ -48,13 +48,6 @@ You can create 2D sprites by dragging sprites from Assets/Textures onto the stag
 - Change the **private** variable into a **public** variable
 - Go back to Unity, and give all asteroids a different speed. Click play.
 
-#### Adding 2D physics
-We are going to make the enmeWe need 2D physics to get accurate collisions between our game elements
-- Click add component, add a **RigidBody2D** component
-- Add a **BoxCollider2D** component
-- Run the game. What's happening ?!?
-- Set the gravity to 0 in project settings
-
 #### Adding enemies
 - Add a new script to the enemy sprite on the stage
 - Copy the code from the move script (from the asteroid) into the new script
@@ -65,8 +58,10 @@ We are going to make the enmeWe need 2D physics to get accurate collisions betwe
 #### Adding 2D physics
 For the player and enemies, we are going to need physics for accurate collision detection. 
 - Add a **RigidBody 2D** and a **BoxCollider 2D** to the enemy and player sprites
+- Run the game. What's happening?
+- Set the gravity to 0 in project settings
 - Create a prefab for the enemy in the same way as for asteroids
-- Add multiple enemies to the scene
+- Add multiple enemies to the scene with different speeds
 
 #### Collisions
 - Open the **Player script** in the code editor and remove the comments in one of the two lines. 
