@@ -29,6 +29,9 @@ You can create 2D sprites by dragging sprites from Assets/Textures onto the stag
 #### Adjust the camera to the size of the background
 - Set the camera size to 3. This is the height of the background image / 100.
 
+#### Layers
+The scene hierarchy does not represent layers. That's why we are using three gameobjects with Z-depths to control what appears above what. You can also set a `sorting layer` to make sure one gameobject always appears above another.
+
 #### Adding components to sprites
 - Click on a sprite
 - Note that it has a `transform` component and a `sprite renderer` component.
@@ -40,7 +43,7 @@ You can create 2D sprites by dragging sprites from Assets/Textures onto the stag
 - Click the 'play' button
 
 #### Creating prefabs
-- Drag the Asteroid that has the move script into the prefab folder
+- Drag the Asteroid that has the move script from the scene panel into the prefab folder
 - Now drag three asteroids ships back from the prefab folder onto the stage
 
 #### Adding public properties to scripts
@@ -59,7 +62,7 @@ You can create 2D sprites by dragging sprites from Assets/Textures onto the stag
 For the player and enemies, we are going to need physics for accurate collision detection. 
 - Add a **RigidBody 2D** and a **BoxCollider 2D** to the enemy and player sprites
 - Run the game. What's happening?
-- Set the gravity to 0 in project settings
+- Set the gravity to 0 in **project settings > physics 2D**
 - Create a prefab for the enemy in the same way as for asteroids
 - Add multiple enemies to the scene with different speeds
 
@@ -68,9 +71,18 @@ For the player and enemies, we are going to need physics for accurate collision 
 - Play the game and check what happens when the player collides with something.
 
 #### Multiplayer
-- The player script responds to key presses. Make these keys public variables.
-- Now add two player ships to the game. Give each ship their own keyboard controls.
-- Add a collision layer, so that players can't collide with each other
+- Create a prefab from the player, and drag another player ship into the scene
+- Run the game and press the controls. What's happening?
+- Open the player script, note that it responds to the Horizontal and Vertical Axis. 
+- Open **project settings > input manager**. Check that Horizontal and Vertical stands for the cursor and WASD keys.
+- Change the number of Axis to 20 and rename the two new Axis to 'PlayerTwoHorizontal' and 'PlayerTwoVertical'.
+- Assign the W A S D keys to 'PlayerTwoHorizontal' and 'PlayerTwoVertical'. Peek into the regular Horizontal and Vertical Axis to see what belongs where. Then remove WASD from Horizontal and Vertical.
+- Finally, we have to make sure the Player Two ship only listens to the PlayerTwo axis! We can use a public variable to do that.
+
+#### Prevent friendly collisions
+- Add a collision layer named `players`. 
+- Assign both players to that collision layer (on top of the components list)
+- Open **project settings > physics 2D** and untick the `players` collision layer 
 
 #### Score
 - Check the Update function in the player code. Place a log message there: `Debug.Log('flying around')`
