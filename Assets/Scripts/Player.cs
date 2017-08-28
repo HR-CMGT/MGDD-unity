@@ -5,6 +5,8 @@ public class Player : MonoBehaviour {
 
 	// verander private naar public om in de editor te kunnen tweaken met de waarden
 	private float Speed = 2f;
+	private string xAxis = "Horizontal";
+	private string yAxis = "Vertical";
 
 	void OnCollisionEnter2D(Collision2D collided){
 		// de variabele collided verwijst naar het object waar we mee botsen
@@ -16,7 +18,8 @@ public class Player : MonoBehaviour {
 
 
 	void Update () {
-		GetComponent<Rigidbody2D> ().velocity = new Vector2(Input.GetAxis("Horizontal")*Speed, Input.GetAxis("Vertical")*Speed);
+		GetComponent<Rigidbody2D>().velocity = new Vector2(Input.GetAxis(xAxis) * Speed, Input.GetAxis(yAxis) * Speed);
+
 	}
 
 }
