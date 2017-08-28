@@ -84,12 +84,6 @@ For the player and enemies, we are going to need physics for accurate collision 
 - Assign both players to that collision layer (on top of the components list)
 - Open **project settings > physics 2D** and untick the `players` collision layer 
 
-#### Score
-- Check the Update function in the player code. Place a log message there: `Debug.Log('flying around')`
-- Let's add a score counter : the player gets points for staying alive by avoiding enemies and asteroids
-- Now log the score before the player is destroyed.
-- Finally, we want to display the score on screen instead of in the debug window.
-
 #### Levels
 - Duplicate the scene. 
 - In the new scene, place more enemies and asteroids. You have levels now!
