@@ -10,51 +10,67 @@ Asset files for Unity Introduction lesson - Game Design and Development
 
 ## Your first 2D game
 
-#### Adding your own graphics
-- Drag some of your own textures into the textures folder in Unity
+#### Creating sprites from images
+- Drag some of your own images into the Assets/Textures folder in Unity
+- Click the little arrow on Asteroid image. Click sprite mode: multiple, and then open the sprite editor.
+- Make a sprite for each asteroid.
 
 #### Creating empty gameobjects
-- Click on the **scene panel** and create two empty gameobjects: background and foreground
-- Give the background a Z position of 10
+- Click on the **scene panel** and create 3 empty gameobjects: background, middleground and foreground
+- Give the background a Z position of 10, and the middleground a Z of 5. 
+- Note that the camera has a negative Z position.
 
-#### Creating 2D sprites
-You can create 2D easily by dragging images onto the stage or into the scene panel.
+#### Creating 2D game sprites
+You can create 2D sprites by dragging sprites from Assets/Textures onto the stage OR into the scene panel.
 - Drag the space image on to the background gameobject in the scene panel.
-- Drag one spaceship, one asteroid and one enemy onto the foreground gameobject in the scene panel.
-- You can create multiple sprites from one image by using the sprite editor - this is called a spritesheet.
+- Drag one asteroid onto the middleground gameobject
+- Drag one spaceship and one enemy onto the foreground gameobject in the scene panel.
 
 #### Adjust the camera to the size of the background
 - Set the camera size to 3. This is the height of the background image / 100.
 
 #### Adding components to sprites
-- Click on the enemy ship sprite
+- Click on a sprite
+- Note that it has a `transform` component and a `sprite renderer` component.
+- Note the units in `transform` : 100 pixels equals 1 unity unit. The center of the world is 0,0,0
+- Click 'Add Component' to see the whole list of available components. 
+
+#### Adding code and running our first game
+- Add the **Move script** component to the Asteroid sprite
+- Click the 'play' button
+
+#### Creating prefabs
+- Drag the Asteroid that has the move script into the prefab folder
+- Now drag three asteroids ships back from the prefab folder onto the stage
+
+#### Adding public properties to scripts
+- Open the **Move script** in the code editor
+- Change the **private** variable into a **public** variable
+- Go back to Unity, and give all asteroids a different speed. Click play.
+
+#### Adding 2D physics
+We are going to make the enmeWe need 2D physics to get accurate collisions between our game elements
 - Click add component, add a **RigidBody2D** component
 - Add a **BoxCollider2D** component
 - Run the game. What's happening ?!?
 - Set the gravity to 0 in project settings
 
-#### Adding code
-- Add a **Move script** component to the enemy
+#### Adding enemies
+- Add a new script to the enemy sprite on the stage
+- Copy the code from the move script (from the asteroid) into the new script
+- Comment out the `update` code and enable the `start` code
+- Save it as `enemy.cs`
+- Add the `player script` to the player sprite
 
-#### Creating prefabs
-- Drag the enemy ship into the prefab folder
-- Now drag three enemy ships back from the prefab folder onto the stage
-
-#### Adding public properties to scripts
-- Open the **Move script** in the code editor
-- Change the **private** variable into a **public** variable
-- Go back to Unity, and give all four enemy ships a different speed
-
-#### More game objects!
-- Create a prefab for the asteroid in exactly the same way as for the enemy ship
-- You can even use the **Move script** for the asteroid
-- Create the player ship, add a Rigidbody2D and a Boxcollider2D
-- Experiment with the shape of the Boxcollider2D
-- Add the **Player script** to the player and run the game
+#### Adding 2D physics
+For the player and enemies, we are going to need physics for accurate collision detection. 
+- Add a **RigidBody 2D** and a **BoxCollider 2D** to the enemy and player sprites
+- Create a prefab for the enemy in the same way as for asteroids
+- Add multiple enemies to the scene
 
 #### Collisions
-- Open the **Player script** in the code editor and remove the comments in one of the two lines. Check what happens when the player collides with something.
-- Can you make the asteroids collide with the enemies?
+- Open the **Player script** in the code editor and remove the comments in one of the two lines. 
+- Play the game and check what happens when the player collides with something.
 
 #### Multiplayer
 - The player script responds to key presses. Make these keys public variables.
@@ -74,7 +90,9 @@ You can create 2D easily by dragging images onto the stage or into the scene pan
 ### Finishing the game
 Open the [code snippets page](./snippets.md) and try to add some or all of the following functionality:
 
+- Add a particle system component to make smoke emit from the space ships
 - If an enemy leaves the screen on the left side, place it back on the right side.
+- If an enemy is destroyed, create a new one
 - Switch to the new level once your score is 1000.
 - Make the space background scroll.
 - Keep adding asteroids to the right side of the screen, remove them when they leave the screen.
