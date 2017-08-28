@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class Move : MonoBehaviour {
@@ -7,7 +7,12 @@ public class Move : MonoBehaviour {
 	private Vector2 Speed = new Vector2(-1f,0);
 
 	void Start () {
-		GetComponent<Rigidbody2D> ().velocity = Speed;
+		// dit gaan we gebruiken voor 2D physics
+		// GetComponent<Rigidbody2D>().velocity = Speed;
+	}
+
+	void Update() {
+		transform.Translate(Speed * Time.deltaTime);
 	}
 		
 }
