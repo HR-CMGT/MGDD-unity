@@ -91,9 +91,11 @@ public class Player : MonoBehaviour {
 ```
 
 #### Prevent friendly collisions
-- Add a collision layer named `players`. 
-- Assign both players to that collision layer (on top of the components list)
-- Open **project settings > physics 2D** and untick the `players` collision layer
+- Click any gameobject. In the top right of the editor, click **Layer > add layer**
+- Add a layer named `players`. 
+- Click both player gameobjects. In the top right of the editor, click **Layer > players**
+- Open **project settings > physics 2D** and untick the box for `players`
+- Now your ships won't collide with each other!
 
 #### Levels
 - Duplicate the scene. 
