@@ -11,11 +11,12 @@ Asset files for Unity Introduction lesson - Game Design and Development
 ## Your first 2D game
 
 #### Creating sprites from images
-- Drag some of your own images into the Assets/Textures folder in Unity
-- Click on the image in the editor and set the texture type to `sprite`
-- Click the little arrow on Asteroid image. This will show the default sprite for that image.
+- Check the images in the Assets/Textures folder in Unity. 
+- Feel free to drag your own space-related images in there.
+- Check that the the texture type (in the inspector) of all images is set to `sprite`
+- Click the little arrow on an image. This will show the default sprite for that image.
 - To create multiple sprites from one image you can set **sprite mode: multiple**, and then open the sprite editor.
-- In the sprite editor you can slice your image into multiple sprites.
+- In the sprite editor click **slice** to create multiple sprites from one image.
 
 #### Creating empty gameobjects
 - Click on the **scene panel** and create 3 empty gameobjects: background, middleground and foreground
