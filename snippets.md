@@ -313,4 +313,6 @@ public class ScrollBackground : MonoBehaviour {
 - drag the texture on the quad
 - add a directional light to the scene (otherwise the texture will be invisible)
 
-[Watch the tutorial](https://www.youtube.com/watch?v=HrDxnMI7pCc)
+## Links
+[Monobehaviour documentation](https://docs.unity3d.com/ScriptReference/MonoBehaviour.html)
+[3D Scrolling Tutorial](https://www.youtube.com/watch?v=HrDxnMI7pCc)
