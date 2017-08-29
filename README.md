@@ -55,10 +55,8 @@ The scene hierarchy does not represent layers. That's why we are using three gam
 
 #### Adding enemies
 - Add a new script to the enemy sprite on the stage
-- Copy the code from the move script (from the asteroid) into the new script
-- Comment out the `update` code and enable the `start` code
-- Save it as `enemy.cs`
-- Add the `player script` to the player sprite
+- Add the `EnemyMove` script to the enemy
+- Add the `Player` script to the player
 
 #### Adding 2D physics
 For the player and enemies, we are going to need physics for accurate collision detection. 
