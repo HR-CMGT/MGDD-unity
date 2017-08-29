@@ -17,7 +17,7 @@ public class Player : MonoBehaviour {
 	} 
 
 
-	void Update () {
+	void FixedUpdate () {
 		GetComponent<Rigidbody2D>().velocity = new Vector2(Input.GetAxis(xAxis) * Speed, Input.GetAxis(yAxis) * Speed);
 
 	}
