@@ -57,7 +57,6 @@ You could also use `sorting layers` of a 2D sprite to decide which objects are d
 - Go back to Unity, and give all asteroids a different speed. Click play.
 
 #### Adding enemies
-- Add a new script to the enemy sprite on the stage
 - Add the `EnemyMove` script to the enemy
 - Add the `Player` script to the player
 
@@ -118,7 +117,6 @@ Open the [code snippets page](./snippets.md) and try to add some or all of the f
 - Add a particle system component to make smoke emit from the space ships
 - If an enemy leaves the screen on the left side, place it back on the right side.
 - If an enemy is destroyed, create a new one
-- Switch to the new level once your score is 1000.
 - Make the space background scroll.
 - Keep adding asteroids to the right side of the screen, remove them when they leave the screen.
 - Add a bullet when the player presses space.
