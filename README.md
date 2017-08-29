@@ -74,21 +74,39 @@ For the player and enemies, we are going to need physics for accurate collision 
 
 #### Multiplayer
 - Create a prefab from the player, and drag another player ship into the scene
-- Run the game and press the controls. What's happening?
-- Open the player script, note that it responds to the Horizontal and Vertical Axis. 
-- Open **project settings > input manager**. Check that Horizontal and Vertical stands for the cursor and WASD keys.
-- Change the number of Axis to 20 and rename the two new Axis to 'PlayerTwoHorizontal' and 'PlayerTwoVertical'.
-- Assign the W A S D keys to 'PlayerTwoHorizontal' and 'PlayerTwoVertical'. Peek into the regular Horizontal and Vertical Axis to see what belongs where. Then remove WASD from Horizontal and Vertical.
-- Finally, we have to make sure the Player Two ship only listens to the PlayerTwo axis! We can use a public variable to do that.
+- Run the game and press the controls. You'll see that both ships are controlled with the same keys.
+- To give each ship its own controls, we are going to add an input axis.
+- Go to **edit > project settings > input** and set the number of Axis to 20
+- Rename the two new Axis from 'cancel' to 'PlayerTwoHorizontal' and 'PlayerTwoVertical'
+- Remove "W A S D" from the default Axis and add them to your own Axis
+- Edit the player script to make the input a public variable
+- In the Unity editor, change the input for player two to 'PlayerTwoHorizontal' and 'PlayerTwoVertical'
+```
+public class Player : MonoBehaviour {
+	public string xAxis = "Horizontal";
+	public string yAxis = "Vertical";
+	void Update () {
+		GetComponent<Rigidbody2D>().velocity = new Vector2(Input.GetAxis(xAxis) * Speed, Input.GetAxis(yAxis);
+	}
+}
+```
 
 #### Prevent friendly collisions
 - Add a collision layer named `players`. 
 - Assign both players to that collision layer (on top of the components list)
-- Open **project settings > physics 2D** and untick the `players` collision layer 
+- Open **project settings > physics 2D** and untick the `players` collision layer
 
 #### Levels
 - Duplicate the scene. 
-- In the new scene, place more enemies and asteroids. You have levels now!
+- In the new scene, place more enemies and asteroids.
+- Open **File > Build Settings** and drag all your scenes from the Unity editor into 'scenes in build'.
+- You can transition to the scene with this code:
+```
+using UnityEngine.SceneManagement;
+void OnCollisionEnter2D(Collision2D coll) {
+    SceneManager.LoadScene("gameover");
+}
+```
 
 ### Finishing the game
 Open the [code snippets page](./snippets.md) and try to add some or all of the following functionality:
