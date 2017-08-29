@@ -1,4 +1,4 @@
-## Code Snippets for Lesson 1
+## Unity Code Snippets
 Feel free to experiment! You could start by adding this empty script to a gameobject, and then add some of the examples.
 ```
 using UnityEngine;
@@ -36,8 +36,6 @@ void Update(){
     body.velocity = new Vector3(2,2);
 }
 ```
-
-
 
 ### Remove gameObject after it leaves the screen
 ```
@@ -94,6 +92,7 @@ void OnCollisionEnter2D(Collision2D coll) {
     SceneManager.LoadScene("gameover");
 }
 ```
+
 ### Player input
 Fire1, Fire2, Fire3 are mapped to Control, Option (Alt), and Command
 ```
@@ -147,7 +146,6 @@ void SpawnAsteroid() {
     Instantiate(asteroid, new Vector3(4.3f,Random.value * 6-3, 0), Quaternion.identity) as GameObject;
 }
 ```
-
 
 ### Movement with physics
 
@@ -207,6 +205,19 @@ void Resume() {
    Time.timeScale = 1;
 }
 ```
+
+### Requiring a component
+Sometimes your script needs your gameobject to have a certain component, for example a RigidBody2D. To prevent errors, you can require the component from your script:
+```
+[RequireComponent(typeof(Rigidbody))]
+public class PlayerScript : MonoBehaviour
+{
+    void Start() {
+        Rigidbody rb = GetComponent<Rigidbody>();
+    }
+}
+```
+
 ### Accessing other gameobjects
 Your script component can search for other gameobjects in the scene. If an enemy ship would want to find the player gameobject we could use:
 ```
