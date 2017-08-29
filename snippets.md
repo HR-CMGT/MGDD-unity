@@ -94,7 +94,7 @@ void OnCollisionEnter2D(Collision2D coll) {
 ```
 
 ### Player input
-Fire1, Fire2, Fire3 are mapped to Control, Option (Alt), and Command
+Fire1, Fire2, Fire3 are mapped to Control, Option (Alt), and Command, but you can also listen to any key directly.
 ```
 if (Input.GetButtonDown("Fire1")) {
     Debug.Log("You pressed CTRL!");
@@ -102,24 +102,35 @@ if (Input.GetButtonDown("Fire1")) {
 if (Input.GetKeyDown("space")) {
     Debug.Log("You pressed Space!");
 }
-```
-Horizontal and Vertical input respond to the W,A,S,D keys and the cursor keys. They return values from -1 to 1. 
-```
-float xspeed = Input.GetAxis("Horizontal");
-float yspeed = Input.GetAxis("Vertical"); 
-velocity = new Vector2(xspeed, yspeed);
-```
-Check any key you want, for example to make a player move on W,A,S,D but not on the cursor keys.
-```
 if (Input.GetKey (KeyCode.W) {
-}
-if (Input.GetKey (KeyCode.A) {
+    Debug.Log("You pressed W!");
 }
 ```
-Mouse acceleration and position
+Horizontal and Vertical input respond to the W,A,S,D keys and the cursor keys. They return values from -1 to 1. You can change the default key bindings in **edit > project settings > input**. If you want to control two ships with different controls:
+- In the input manager add input for player two by setting Axis to 20
+- Rename the two new Axis from 'cancel' to 'PlayerTwoHorizontal' and 'PlayerTwoVertical'
+- Remove "W A S D" from the default Axis and add them to your own Axis
+- Add the following code to make the input a public variable
+- In the Unity editor, change the input for player two.
+```
+public class Player : MonoBehaviour {
+	public string xAxis = "Horizontal";
+	public string yAxis = "Vertical";
+	void Update () {
+		GetComponent<Rigidbody2D>().velocity = new Vector2(Input.GetAxis(xAxis) * Speed, Input.GetAxis(yAxis);
+	}
+}
+```
+
+Mouse position
+```
+Vector2 mousePosition = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
+```
+Mouse acceleration
 ```
 float mouseXspeed = Input.GetAxis("Mouse X");
-Vector2 mousePosition = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
+float mouseYspeed = Input.GetAxis("Mouse Y");
+Vector2 mouseSpeed = new Vector2(mouseXspeed, mouseYspeed);
 ```
 
 ### Fire a bullet
