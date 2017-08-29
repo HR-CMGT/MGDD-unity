@@ -85,6 +85,7 @@ void Start() {
 ### Switching scenes
 
 Create a new scene named 'gameover'. We'll switch to the gameover scene after a collision.
+You need to add the scene to the 'build settings'.
 
 ```
 using UnityEngine.SceneManagement;
