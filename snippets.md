@@ -52,6 +52,12 @@ void OnMouseDown(){
 }
 ```
 
+### Sorting layers
+The scene hierarchy does not represent layers. To decide what objects are drawn above or below other objects, we can use the Z depth of their containers. A large Z value means the object is further away from the camera. Because our game is 2D, there is no visual effect for having a larger Z value.
+
+You could also use `sorting layers` of a 2D sprite to decide which objects are drawn first. Click the **Sprite Renderer > Sorting Layer** and add a new layer. This screen allows you to decide the visual order of your objects.
+
+
 ### World and camera space
 Gameobjects live in a `world space`. The center of this world is 0,0 and the world reaches out in all directions infinitely.
 
