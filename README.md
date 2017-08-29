@@ -33,7 +33,9 @@ You can create 2D sprites by dragging sprites from Assets/Textures onto the stag
 - Set the camera size to 3. This is the height of the background image / 100.
 
 #### Layers
-The scene hierarchy does not represent layers. That's why we are using three gameobjects with Z-depths to control what appears above what. You can also set a `sorting layer` to make sure one gameobject always appears above another.
+The scene hierarchy does not represent layers. To decide what objects are drawn above or below other objects, we can use the Z depth of their containers. A large Z value means the object is further away from the camera. Because our game is 2D, there is no visual effect for having a larger Z value.
+
+You could also use `sorting layers` of a 2D sprite to decide which objects are drawn first. Click the **Sprite Renderer > Sorting Layer** and add a new layer. This screen allows you to decide the visual order of your objects.
 
 #### Adding components to sprites
 - Click on a sprite
@@ -91,11 +93,12 @@ public class Player : MonoBehaviour {
 ```
 
 #### Prevent friendly collisions
+We don't want the players to be destroyed if they hit each other. If we add bullets to the game, we don't want the player to be destroyed by their own bullets. We can use collision layers to achieve this.
 - Click any gameobject. In the top right of the editor, click **Layer > add layer**
 - Add a layer named `players`. 
 - Click both player gameobjects. In the top right of the editor, click **Layer > players**
 - Open **project settings > physics 2D** and untick the box for `players`
-- Now your ships won't collide with each other!
+- If you add bullets to your game, you can also add them to the `players` layer.
 
 #### Levels
 - Duplicate the scene. 
