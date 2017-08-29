@@ -314,5 +314,5 @@ public class ScrollBackground : MonoBehaviour {
 - add a directional light to the scene (otherwise the texture will be invisible)
 
 ## Links
-[Monobehaviour documentation](https://docs.unity3d.com/ScriptReference/MonoBehaviour.html)
-[3D Scrolling Tutorial](https://www.youtube.com/watch?v=HrDxnMI7pCc)
+- [Monobehaviour documentation](https://docs.unity3d.com/ScriptReference/MonoBehaviour.html)
+- [3D Scrolling Tutorial](https://www.youtube.com/watch?v=HrDxnMI7pCc)
