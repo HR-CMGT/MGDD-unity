@@ -12,6 +12,11 @@ A small tutorial on how to use spritesheets in Unity
 
 [Spritesheets](spritesheets.md)
 
+### Physics
+A handout showing the different options for 2D Physics
+
+[Physics](physics.md)
+
 ### Code Snippets
 Here you'll find all kinds of handy code snippets for often used functionality.
 
