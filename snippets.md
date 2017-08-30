@@ -318,9 +318,3 @@ public class ScrollBackground : MonoBehaviour {
 - make the quad the same size as the screen (if the game is 800 x 600 pixels, the quad scale is 8 x 6)
 - drag the texture on the quad
 - add a directional light to the scene (otherwise the texture will be invisible)
-
-## Links
-- [Monobehaviour documentation](https://docs.unity3d.com/ScriptReference/MonoBehaviour.html)
-- [Unity 2D tutorials](https://unity3d.com/learn/tutorials/topics/2d-game-creation/)
-- [3D Scrolling Tutorial](https://www.youtube.com/watch?v=HrDxnMI7pCc)
-- [Online multiplayer networking](https://unity3d.com/learn/tutorials/topics/multiplayer-networking)
