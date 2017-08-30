@@ -201,6 +201,14 @@ void Update() {
 }
 ```
 
+### Box collision without physics
+We can check if the bounding boxes of two gameobjects overlap each other, even if they have no BoxCollider2D.
+```
+if (object1.renderer.bounds.Intersects(object2.renderer.bounds)) {
+   Debug.Log("object1 hits object2");
+}
+```
+
 ### Rotate and move in direction of another gameobject
 You can use this code to make a guided missile, or to make an object follow the mouse
 ```
