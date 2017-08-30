@@ -1,6 +1,6 @@
-## Spritesheets
+# Spritesheet Animation
 
-This tutorial will show how to use the "Link" Spritesheet from the Assets folder.
+This tutorial will show how to animate the sprites from the "Link" Spritesheet in the Assets folder.
 
 ### Creating separate sprites
 
@@ -76,10 +76,31 @@ We want to update the speed property when Link changes direction. We can do this
 Vector3 direction = new Vector3(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
 GetComponent<Animator>().SetFloat("speed", direction.x);
 ```
-Press play. If all went well, Link shows a different animation when moving left or right!
+Press play. If all went well, Link shows a different animation when moving left or right! If we want Link to move in four directions, we could add two more states, and add transition arrows between all of them. From the 'right' state, you could build a transition to 'left', 'up' and 'down', and repeat that for every state. 
 
 ### Animation controller advanced
-If we want Link to move in four directions, we could add two more states, and add transition arrows between all of them. From the 'right' state, you could build a transition to 'left', 'up' and 'down', and repeat that for every state. 
+To prevent a spider-web of transition arrows, you can use a **2D blend tree**. This is a special state that listens to horizontal and vertical direction, and displays the right animation automatically.
 
-That would result in a spider-web of arrows. You can prevent that by using a **2D blend tree**
+- Remove all four animation states (and transitions) from the **Animator**
+- Change the property 'speed' to 'xspeed'. Add a float property 'yspeed'
+- Click **create state > from new blend tree**
+- Double click the new state. We are now editing the blend tree.
+- Set the type to **2D Simple Directional**
+- Make sure the blend tree shows the xspeed and yspeed properties
+- Click **motion > add motion field**
+- In the new field, click the circle next to 'Motion (None)' and select the 'Link Up' animation.
+- For 'Link Up' set X to 0 and Y to 1
+- Now add three more motion fields for Link Down, Link Left, and Link Right, and set their X, Y values accordingly.
+- Save the project and press play!
 
+### Idle state
+We should now have a Link that can run in four directions and display four animations. Let's add an Idle state where Link does nothing.
+- Select Link on the stage.
+- Open the **Animation** window (not the Animator) and open the drop-down menu under the small red record button
+- Click 'Create new clip', save it as 'idle'
+- Drag one sprite of Link facing right into one frame. Save the animation.
+- Now go back to the **Animator** window
+- If the idle animation has been added here automatically, you can delete it
+- Double click the blend tree, and add a motion field.
+- Select the idle animation and leave X,Y at 0
+- Save the project and press play!
