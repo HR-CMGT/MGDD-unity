@@ -4,14 +4,17 @@
 
 ### Introduction
 In this lesson we'll take our first look at the Unity editor. We will learn how to use the interface, create gameobjects, and then we'll make a basic game with interaction and animation.
+
 [Introduction](introduction.md)
 
 ### Spritesheets
 A small tutorial on how to use spritesheets in Unity
+
 [Spritesheets](spritesheets.md)
 
 ### Code Snippets
 Here you'll find all kinds of handy code snippets for often used functionality.
+
 [Snippets](snippets.md)
 
 ### Links and documentation
