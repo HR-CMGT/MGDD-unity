@@ -90,7 +90,14 @@ To prevent a spider-web of transition arrows, you can use a **2D blend tree**. T
 - Click **motion > add motion field**
 - In the new field, click the circle next to 'Motion (None)' and select the 'Link Up' animation.
 - For 'Link Up' set X to 0 and Y to 1
+- Save and play, to see if the animation is playing
 - Now add three more motion fields for Link Down, Link Left, and Link Right, and set their X, Y values accordingly.
+- Finally, we need to set the xspeed and yspeed properties from the code of our MoveLink script
+```
+Vector3 direction = new Vector3(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+GetComponent<Animator>().SetFloat("xspeed", direction.x);
+GetComponent<Animator>().SetFloat("yspeed", direction.y);
+```
 - Save the project and press play!
 
 ### Idle state
