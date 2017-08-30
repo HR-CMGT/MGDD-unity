@@ -25,6 +25,9 @@ This will also show you other options to animate apart from the sprite.
 - Make sure the timeline has 10 frames. Sometimes Unity places an extra frame after the 1 minute mark. Delete that frame.
 - Press play
 
+### Controlling Link
+Attach the "MoveLink" script to link, and run the game. You can control link with the arrow keys. Note that the animation always shows link moving right.
+
 ### Create the other three animations
 You can use this shortcut to create the other three animations: Link walking left, Link walking down, Link walking up.
 - Click the desired frames in the Assets pane by holding shift and clicking the first and last image.
@@ -34,13 +37,49 @@ You can use this shortcut to create the other three animations: Link walking lef
 - Now you can remove all animations from the stage except Link moving right.
 - Also delete all **animation controllers** except the one for Link moving right.
 
-### Controlling Link
-Attach the "MoveLink" script to link, and run the game. You can control link with the arrow keys. Note that the animation always shows link moving right.
+### Animation controller basics
+You may have noticed Unity created an animation controller for each animation. The controller decides when to show an animation and can also transition between animations. We only need one controller.
 
-### The animation controller
-You may have noticed Unity created an animation controller for each animation. The controller decides when to show an animation and can also transition between animations.
-- Open the controller for link moving right
-- Click 'create state > empty', name it 'link left'.
-- In the inspector, click the little circle next to 'motion' and add the 'link left' animation there!
-- Now you have a controller with two animations.
+We are going to make a basic example where Link shows the correct animation for moving left and right.
+
+- Double click the controller for link moving right. This opens the **Animator**
+- Run the game and note that the 'linkright' animation is running in the Animator
+- Click inside the Animator space, choose 'create state > empty', name it 'linkleft'. 
+- In the inspector, add the 'link left' **animation** to the **motion** field
+- Now you have a controller with two animation states.
+- Right-click the linkright state, choose 'add transition' and create a transition to linkleft.
+- Do the same thing the other way around.
+- You now have two states, connected to each other by a white arrow.
+- Run the game. You will see the two animation states transitioning into each other!
+
+### Removing the smooth transition
+When switching from one animation to the next, Unity calculates 'in between' steps. This looks great in games where a 3D model can actually transition from one action to another. But this doesn't work for spritesheet animations. We just want our own 2D sprites to be drawn as they are.
+- Click a white transition arrow between two states. 
+- Open 'settings' in the inspector. Set Time, Duration and Offset to 0.
+- Do this for the other transition arrow as well. Press play. 
+
+### Set a condition for a transition
+We want to show our animations only after a condition happens. If Link moves right, we show the 'moveright' animation.
+- Set a transition property in the Animator. Click the 'plus' in the Animator Parameters window. Add a `float`
+- Name the property `speed`
+- Click the white transition arrow that points from 'moveleft' to 'moveright'
+- Add a **condition** in the inspector. Also untick 'exit time'
+- Set the condition to **speed greater than 0**
+- Do the same thing for the transition from right to left, but set the condition to **speed smaller than 0**
+- Run the game. We still only see one animation. That is because the **speed** property is not updated.
+
+### Update Animator properties
+We want to update the speed property when Link changes direction. We can do this from the 'MoveLink' script. First we get a reference to the Animator, and then we can change the speed property!
+```
+Vector3 direction = new Vector3(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+
+Animator anim = GetComponent<Animator>();
+anim.SetFloat("speed", direction.x);
+```
+Press play. If all went well, Link shows a different animation when moving left or right!
+
+### Animation controller advanced
+If we want Link to move in four directions, we could add two more states, and add transition arrows between all of them. From the 'right' state, you could build a transition to 'left', 'up' and 'down', and repeat that for every state. 
+
+That would result in a spider-web of arrows. You can prevent that by using a **2D blend tree**
 
