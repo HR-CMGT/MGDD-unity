@@ -52,6 +52,14 @@ void OnMouseDown(){
 }
 ```
 
+### Flip a sprite
+Flip the image so that you only need one sprite for right / left movement
+```
+void Flip(){
+	transform.localScale = transform.localScale * -1;
+}
+```
+
 ### Sorting layers
 The scene hierarchy does not represent layers. To decide what objects are drawn above or below other objects, we can use the Z depth of their containers. A large Z value means the object is further away from the camera. Because our game is 2D, there is no visual effect for having a larger Z value.
 
