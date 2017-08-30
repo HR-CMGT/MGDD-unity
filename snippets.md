@@ -106,7 +106,7 @@ void OnCollisionEnter2D(Collision2D coll) {
 }
 ```
 
-### Player input
+### Button input
 Fire1, Fire2, Fire3 are mapped to Control, Option (Alt), and Command, but you can also listen to any key directly.
 ```
 if (Input.GetButtonDown("Fire1")) {
@@ -119,7 +119,28 @@ if (Input.GetKey (KeyCode.W) {
     Debug.Log("You pressed W!");
 }
 ```
-Horizontal and Vertical input respond to the W,A,S,D keys and the cursor keys. They return values from -1 to 1. You can change the default key bindings in **edit > project settings > input**. If you want to control two ships with different controls:
+
+### Mouse input
+```
+Vector2 mousePosition = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
+
+float mouseXspeed = Input.GetAxis("Mouse X");
+float mouseYspeed = Input.GetAxis("Mouse Y");
+Vector2 mouseSpeed = new Vector2(mouseXspeed, mouseYspeed);
+```
+
+### Directional input
+Horizontal and Vertical input respond to the W,A,S,D keys and the cursor keys. They return values from -1 to 1. These values are **smoothed** so that they **transition** from -1 to 0 to 1. 
+```
+float xspeed = Input.GetAxis("Horizontal");
+float yspeed = Input.GetAxis("Vertical")
+Vector2 velocity = new Vector2(xspeed, yspeed);
+```
+- If you just want to know if the key is pressed or not, you can use `GetAxisRaw()` instead of `GetAxis()`. 
+- You can change the default key bindings in **edit > project settings > input**. 
+
+### Adding input axes
+If you want to control two objects with different controls you need separate input axis.
 - In the input manager add input for player two by setting Axis to 20
 - Rename the two new Axis from 'cancel' to 'PlayerTwoHorizontal' and 'PlayerTwoVertical'
 - Remove "W A S D" from the default Axis and add them to your own Axis
@@ -129,22 +150,12 @@ Horizontal and Vertical input respond to the W,A,S,D keys and the cursor keys. T
 public class Player : MonoBehaviour {
 	public string xAxis = "Horizontal";
 	public string yAxis = "Vertical";
-	void Update () {
+	void FixedUpdate () {
 		GetComponent<Rigidbody2D>().velocity = new Vector2(Input.GetAxis(xAxis) * Speed, Input.GetAxis(yAxis);
 	}
 }
 ```
 
-Mouse position
-```
-Vector2 mousePosition = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
-```
-Mouse acceleration
-```
-float mouseXspeed = Input.GetAxis("Mouse X");
-float mouseYspeed = Input.GetAxis("Mouse Y");
-Vector2 mouseSpeed = new Vector2(mouseXspeed, mouseYspeed);
-```
 
 ### Fire a bullet
 Add this code to the player ship. We'll use a public variable for the gameobject (a bullet) that is going to be added. In the editor, drag the bullet prefab into the variable field.
