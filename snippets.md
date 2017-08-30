@@ -277,6 +277,30 @@ m.score = 10;
 m.AddScore(10);
 ```
 
+### How to make sure there is only one global script
+If you use `DontDestroyOnLoad` your global script is not removed after switching scenes. If you switch back to the scene where the global script was created, you suddenly have two global scripts. There are two ways to prevent this:
+- Create the global script in a scene that is only used once, for example the first splash screen.
+- Make the global script a `Singleton`: a class that can only ever have one instance:
+```
+public class Manager : MonoBehaviour {
+
+	public static Manager Instance;
+	
+	void Awake()
+	{
+		// check if we already have a manager
+		if(Instance) {
+			Debug.LogError("Since there is already a game manager so we will destroy ourselves!");
+			Destroy(gameObject);
+		} else {
+			Instance = this;
+			DontDestroyOnLoad(gameObject);
+			Debug.Log("Creating the first and only game manager");
+		}
+	}
+}
+```
+
 ### Scrolling background
 
 The following script checks the start position of an image, and scrolls it to the left for its own width in pixels. Then places itself back at its start position.
