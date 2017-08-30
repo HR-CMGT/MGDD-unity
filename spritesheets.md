@@ -60,21 +60,21 @@ When switching from one animation to the next, Unity calculates 'in between' ste
 
 ### Set a condition for a transition
 We want to show our animations only after a condition happens. If Link moves right, we show the 'moveright' animation.
-- Set a transition property in the Animator. Click the 'plus' in the Animator Parameters window. Add a `float`
+- To set a transition property in the Animator, click the 'plus' in the Animator Parameters window. 
+- Add a `float` property
 - Name the property `speed`
 - Click the white transition arrow that points from 'moveleft' to 'moveright'
-- Add a **condition** in the inspector. Also untick 'exit time'
+- Add a **condition** in the inspector. 
 - Set the condition to **speed greater than 0**
+- While you're here, you can also untick 'exit time'. This means that the animation won't finish playing before a transition.
 - Do the same thing for the transition from right to left, but set the condition to **speed smaller than 0**
 - Run the game. We still only see one animation. That is because the **speed** property is not updated.
 
 ### Update Animator properties
-We want to update the speed property when Link changes direction. We can do this from the 'MoveLink' script. First we get a reference to the Animator, and then we can change the speed property!
+We want to update the speed property when Link changes direction. We can do this from the 'MoveLink' script. After reading the player input, we can pass the horizontal input value to the the speed property. 
 ```
 Vector3 direction = new Vector3(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
-
-Animator anim = GetComponent<Animator>();
-anim.SetFloat("speed", direction.x);
+GetComponent<Animator>().SetFloat("speed", direction.x);
 ```
 Press play. If all went well, Link shows a different animation when moving left or right!
 
