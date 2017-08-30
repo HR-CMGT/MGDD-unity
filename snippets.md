@@ -107,7 +107,7 @@ void OnCollisionEnter2D(Collision2D coll) {
 ```
 
 ### Button input
-Fire1, Fire2, Fire3 are mapped to Control, Option (Alt), and Command, but you can also listen to any key directly.
+You can change all default key bindings in **edit > project settings > input**. Fire1, Fire2, Fire3 are mapped to Control, Option (Alt), and Command, but you can also listen to any key directly.
 ```
 if (Input.GetButtonDown("Fire1")) {
     Debug.Log("You pressed CTRL!");
@@ -137,7 +137,12 @@ float yspeed = Input.GetAxis("Vertical")
 Vector2 velocity = new Vector2(xspeed, yspeed);
 ```
 - If you just want to know if the key is pressed or not, you can use `GetAxisRaw()` instead of `GetAxis()`. 
-- You can change the default key bindings in **edit > project settings > input**. 
+- If your character moves down and right, the direction will be **1,1**
+- That means that down+right movement is actually faster than just moving right or just moving down! (a larger distance is traveled in the same time)
+- If you want to prevent that, you can normalise the vector. **1,1** will become **0.7,0.7**
+```
+Vector3 n = new Vector3(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
+```
 
 ### Adding input axes
 If you want to control two objects with different controls you need separate input axis.
