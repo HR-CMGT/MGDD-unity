@@ -18,15 +18,19 @@ This tutorial will show how to animate the sprites from the "Link" Spritesheet i
 - Press play and walk around the screen.
 
 ## Animation basics
+![Animation workflow](./screenshots/animation_workflow.png)
+
 - A gameobject can have an **animator** component
 - The animator component needs an **animation controller** 
 - And the animation controller has **animation clips**
 
 #### Animation controller
+![Animation controller](./screenshots/controller.png)
 - The controller can have several animation clips
 - The controller can switch between animation clips
 
 #### Animation clips
+![Animation timeline](./screenshots/timeline.png)
 - An animation clip changes the properties of the gameobject, for example: position, sprite image, color
 
 #### Shortcut
