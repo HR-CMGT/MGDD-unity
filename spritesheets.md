@@ -2,7 +2,7 @@
 
 This tutorial will show how to animate the sprites from the "Link" Spritesheet in the Assets folder.
 
-### Creating separate sprites
+## Creating sprites from a spritesheet
 
 - Click the spritesheet image in the editor, set the texture type to 'sprite'
 - Set the sprite mode to 'multiple' and click the sprite editor button
@@ -10,6 +10,13 @@ This tutorial will show how to animate the sprites from the "Link" Spritesheet i
 - Choose the 'grid by cell count' option. Count the number of rows and columns in the image and fill them in.
 - Click 'slice'. Check that each link is now a separate sprite, and that all sprites are the same size.
 - Click 'apply' and close the window.
+
+## Animation basics
+- A gameobject has an animation controller component
+- An animation controller has animation clips
+- An animation clip changes the properties of the gameobject, for example: position, sprite image, color
+- The controller can have several animation clips
+- The controller can switch between animation clips
 
 ### Creating a sprite animation manually
 We will create a sprite animation step by step, so that we know exactly what is happening in the editor. 
