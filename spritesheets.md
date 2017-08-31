@@ -26,8 +26,8 @@ This tutorial will show how to animate the sprites from the "Link" Spritesheet i
 
 #### Animation controller
 ![Animation controller](./screenshots/controller.png)
-- The controller can have several animation clips
-- The controller can switch between animation clips
+- The controller can have several states. Each state has one animation clip
+- The controller can switch between states
 
 #### Animation clips
 ![Animation timeline](./screenshots/timeline.png)
