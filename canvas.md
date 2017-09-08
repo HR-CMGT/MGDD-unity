@@ -67,5 +67,57 @@ example due to localisation.
 - Now select the button label and start typing. The button should automatically grow along with the label text!
 - You can adjust the padding to keep some empty space around the text
 
+### Text input 
+- Select `UI > InputField`
+- Click the individual gameobjects and set the font sizes and mouseover colors
+
+You can set the text field, background and input script manually:
+
+- To create a text input field, first add `UI > Text` to the scene. Set the font size and color.
+- If you want your text field to have a background, add a `UI > Image` to the scene and place it behind the Text.
+- Click the text field, and `Add Component`, search for `input` and add the input component.
+- In the `input` properties, set `target graphic` to the UI image background and set `text component` to the text field that you added before.
+
+To read the input of the text field from code, you can use the following script:
+```
+using UnityEngine;
+using System.Collections;
+using UnityEngine.UI; 
+
+public class manager : MonoBehaviour
+{
+	public InputField mainInputField;
+
+	public void ReadField()	{
+		Debug.Log("Text field value is " + mainInputField.text);
+	}
+}
+```
+
+You can listen to change events of the text field by using:
+
+```
+using UnityEngine;
+using System.Collections;
+using UnityEngine.UI; 
+
+public class manager : MonoBehaviour
+{
+	public InputField mainInputField;
+
+	public void Start()
+	{
+		mainInputField.onValueChange.AddListener(delegate {ValueChangeCheck(); });
+	}
+
+	public void ValueChangeCheck()
+	{
+		Debug.Log("Value is now " + mainInputField.text);
+	}
+}
+```
+
+
+
 ### Links
 - [Tutorial resizing image](https://www.youtube.com/watch?v=2VrtXiUnJH0)
