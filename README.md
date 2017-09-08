@@ -17,6 +17,11 @@ A handout showing the different options for 2D Physics
 
 [Physics](physics.md)
 
+### UI
+Getting started with responsive UI elements
+
+[UI](canvas.md)
+
 ### Code Snippets
 Here you'll find all kinds of handy code snippets for often used functionality.
 
