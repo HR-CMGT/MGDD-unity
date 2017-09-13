@@ -9,15 +9,14 @@ regardless of resolution.
 ### Setting the canvas
 
 - Add a new gameobject and choose `UI > Canvas`, or choose any other UI element, which will automatically add a canvas.
-- Click the canvas and note the view settings in the inspector is `Screen space - Overlay` - this will display your canvas in a HUGE size.
-You'll need to zoom out pretty far to see the whole canvas.
+- Click the canvas and note the view settings in the inspector is `Screen space - Overlay` - this will display your canvas in a HUGE size. That's OK! Just a bit impractical, you'll have to zoom out pretty far to see the whole thing.
 - Click the `game` tab to see how the canvas will render in-game.
-- If you want your canvas to always display in the size of your 2D game you can set view to `Screen space - Camera`
+- If you want your canvas to have the same size as your game, you can set view to `Screen space - Camera`
 - Set your game's main camera as the canvas camera
-- Under `Canvas scaler script` you'll want to set UI Scale Mode to `Scale with screen size`
+- Find the right canvas position so that the canvas is above your game but below the camera, a distance of **7** should do.
+- Under `Canvas scaler script` you'll want to set UI Scale Mode to `Scale with screen size`.
 - Set `reference resolution` at the size at which you design your UI (and game). For now, keep it at 800 x 600.
-- For a portrait (horizontal) game it's best to drag the **match** slider to **height**. This will cause Unity to always interpret the height of
-your game as 600 pixels, and only adjust the width according to the size of the screen. This will make it easier to predict the behavior of the different anchor points.
+- For a portrait (horizontal) game it's best to drag the **match** slider to **height**. This will cause Unity to always interpret the height of your game as 600 pixels, and adjust the width according to the size of the screen. This will make it easier to predict the behavior of the different anchor points.
 
 ### Anchor points
 
@@ -69,12 +68,12 @@ example due to localisation.
 
 ### Text input 
 - Select `UI > InputField`
-- Click the individual gameobjects and set the font sizes and mouseover colors
+- In the scene panel you can see that an inputfield has a background image, a text field and an input script. 
 
-You can set the text field, background and input script manually:
+You could also add a the text field, background and input script manually:
 
-- To create a text input field, first add `UI > Text` to the scene. Set the font size and color.
-- If you want your text field to have a background, add a `UI > Image` to the scene and place it behind the Text.
+- First add `UI > Text` to the scene. Set the font size and color.
+- Add a `UI > Image` to the scene and place it behind the Text.
 - Click the text field, and `Add Component`, search for `input` and add the input component.
 - In the `input` properties, set `target graphic` to the UI image background and set `text component` to the text field that you added before.
 
