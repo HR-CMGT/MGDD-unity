@@ -33,3 +33,4 @@ Here you'll find all kinds of handy code snippets for often used functionality.
 - [Online multiplayer networking](https://unity3d.com/learn/tutorials/topics/multiplayer-networking)
 - [3D Scrolling Tutorial](https://www.youtube.com/watch?v=HrDxnMI7pCc)
 - [Collaborating on a project](https://unity3d.com/unity/features/collaborate)
+- [Animation with Audio tutorials](https://www.youtube.com/channel/UCBkub2TsbCFIfdhuxRr2Lrw/videos)
