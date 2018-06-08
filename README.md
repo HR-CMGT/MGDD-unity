@@ -27,6 +27,14 @@ Here you'll find all kinds of handy code snippets for often used functionality.
 
 [Snippets](snippets.md)
 
+## Entity Component System
+
+Unity is moving from Object Oriented Programming to data oriented design, with the new ECS system
+
+- [youtube introduction to ECS](https://www.youtube.com/watch?v=_U9wRgQyy6s)
+- [ECS Documentation](https://bit.ly/2J9YvLe)
+- [More on Pure ECS](https://bit.ly/2H9ResT)
+
 ### Links and documentation
 - [Unity 2D tutorials](https://unity3d.com/learn/tutorials/topics/2d-game-creation/)
 - [Monobehaviour documentation](https://docs.unity3d.com/ScriptReference/MonoBehaviour.html)
