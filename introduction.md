@@ -46,12 +46,15 @@ You can create 2D sprites by dragging sprites from Assets/Textures onto the stag
 - Click the 'play' button
 
 #### Creating prefabs
-- Drag the Asteroid that has the move script from the scene panel into the prefab folder
-- Now drag three asteroids ships back from the prefab folder onto the stage
+- Create a folder named 'Prefabs' in the Assets folder.
+- Drag the *Asteroid that has the move script* from the scene into the Prefabs folder
+- Delete it from the scene
+- Now drag three asteroid prefabs back from the prefab folder onto the stage
+- Note that you can edit each prefab individually in the scene. By clicking 'apply', you apply your changes to all other prefab instances as well.
 
-#### Adding public properties to scripts
+#### Adding public properties
 - Open the **Move script** in the code editor
-- Change the **private** variable into a **public** variable
+- Change the **private Vector2** variable into a **public Vector2** variable
 - Go back to Unity, and give all asteroids a different speed. Click play.
 
 #### Adding enemies
