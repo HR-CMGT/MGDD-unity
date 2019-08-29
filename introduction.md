@@ -23,7 +23,7 @@ Asset files for Unity Introduction lesson - Game Design and Development
 - Give the background a Z position of 10, and the middleground a Z of 5. 
 - Note that the camera has a negative Z position.
 
-#### Creating 2D game sprites
+#### Creating 2D sprites
 You can create 2D sprites by dragging sprites from Assets/Textures onto the stage OR into the scene panel.
 - Drag the space image on to the background gameobject in the scene panel.
 - Drag one asteroid onto the middleground gameobject
@@ -35,13 +35,13 @@ You can create 2D sprites by dragging sprites from Assets/Textures onto the stag
 - Set the camera size to 3. This is the height of the background image / 100. Our background image is 300 pixels high.
 - In the GAME tab, set the Game Aspect Ratio the same as your background image. Since our background image is 400x300 pixels we set the aspect ratio to 4:3
 
-#### Adding components to sprites
+#### Components
 - Click on a sprite
 - Note that it has a `transform` component and a `sprite renderer` component.
 - Note the units in `transform` : 100 pixels equals 1 unity unit. The center of the world is 0,0,0
 - Click 'Add Component' to see the whole list of available components. 
 
-#### Adding code and running our first game
+#### Adding existing scripts to sprites
 - Add the **Move script** component to the Asteroid sprite
 - Click the 'play' button
 
@@ -57,21 +57,24 @@ You can create 2D sprites by dragging sprites from Assets/Textures onto the stag
 - Change the **private Vector2** variable into a **public Vector2** variable
 - Go back to Unity, and give all asteroids a different speed. Click play.
 
-#### Adding enemies
+#### Add the enemy and player scripts
 - Add the `EnemyMove` script to the enemy
 - Add the `Player` script to the player
 
 #### Adding 2D physics
 For the player and enemies, we are going to need physics for accurate collision detection. 
-- Add a **RigidBody 2D** and a **BoxCollider 2D** to the enemy and player sprites
+- Add a **Physics2D > RigidBody 2D** to the enemy and player sprites. A RigidBody makes the sprite part of the *physics simulation*
+- Add a **Physics2D > BoxCollider 2D** to the enemy and player sprites. A BoxCollider allows us to measure when the object hits something. The boxcollider can have a different shape than the sprite!
 - Run the game. What's happening?
-- Set the gravity to 0 in **project settings > physics 2D**
+- Set the gravity to 0 in **EDIT > project settings > physics 2D**
+- If you don't want the objects to rotate after colliding, you can edit **RigidBody2D > Constraints > Freeze Rotation Z**
 - Create a prefab for the enemy in the same way as for asteroids
 - Add multiple enemies to the scene with different speeds
 
 #### Collisions
 - Open the **Player script** in the code editor and remove the comments in one of the two lines. 
 - Play the game and check what happens when the player collides with something.
+- Add `Debug.Log("boom")` to the collision script, to get feedback during testing.
 
 #### Multiplayer
 - Create a prefab from the player, and drag another player ship into the scene
