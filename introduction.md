@@ -28,9 +28,12 @@ You can create 2D sprites by dragging sprites from Assets/Textures onto the stag
 - Drag the space image on to the background gameobject in the scene panel.
 - Drag one asteroid onto the middleground gameobject
 - Drag one spaceship and one enemy onto the foreground gameobject in the scene panel.
+- Make sure that the sprites themselves still have a Z position of 0. 
 
 #### Adjust the camera to the size of the background
-- Set the camera size to 3. This is the height of the background image / 100.
+- Note that the camera projection is *orthographic*. This means there is no 3D perspective.
+- Set the camera size to 3. This is the height of the background image / 100. Our background image is 300 pixels high.
+- In the GAME tab, set the Game Aspect Ratio the same as your background image. Since our background image is 400x300 pixels we set the aspect ratio to 4:3
 
 #### Adding components to sprites
 - Click on a sprite
