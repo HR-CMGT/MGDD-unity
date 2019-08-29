@@ -29,6 +29,11 @@ Here you'll find all kinds of handy code snippets for often used functionality.
 
 # Links
 
+### Using Visual Studio Code as your Code editor
+
+- [Setting up VS Code](https://code.visualstudio.com/docs/other/unity)
+- [Debugging with VS Code](https://www.youtube.com/watch?v=qCkFzMSILzk)
+
 ### Unity Game Kit
 
 Getting started building a complete game without any code
