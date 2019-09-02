@@ -96,6 +96,7 @@ public class Player : MonoBehaviour {
 ```
 
 #### Prevent friendly collisions
+
 We don't want the players to be destroyed if they hit each other. If we add bullets to the game, we don't want the player to be destroyed by their own bullets. We can use collision layers to achieve this.
 - Click any gameobject. In the top right of the editor, click **Layer > add layer**
 - Add a layer named `players`. 
@@ -103,14 +104,30 @@ We don't want the players to be destroyed if they hit each other. If we add bull
 - Open **project settings > physics 2D** and untick the box for `players`
 - If you add bullets to your game, you can also add them to the `players` layer.
 
-#### Levels
-- Duplicate the scene. 
-- In the new scene, place more enemies and asteroids.
-- Open **File > Build Settings** and drag all your scenes from the Unity editor into 'scenes in build'.
-- You can transition to the scene with this code:
+#### Start screen
+
+- Create a new scene with EDIT > NEW SCENE and then EDIT > OPEN SCENE
+- Open **File > Build Settings** and drag the start scene from the Unity editor into 'scenes in build'.
+- Drag the space background and game title into the scene.
+- Add a BoxCollider2D to the title. This is needed to make the title clickable.
+- We will make the start scene respond to a button click and spacebar input. Click the title image and click ADD COMPONENT > NEW SCRIPT. Add the following code to the script:
+```
+void Update() {
+    if (Input.GetKeyDown("space")) {
+        print("space key was pressed");
+    }
+}
+
+void OnMouseDown() {
+    print("mouse was pressed");
+}
+```
+
+- Finally, instead of displaying a log message, we can use this code to go to the game scene. Replace the `print` lines with the `loadScene` line. Make sure the name of your scene is correct.
 ```
 using UnityEngine.SceneManagement;
-void OnCollisionEnter2D(Collision2D coll) {
+
+void OnMouseDown() {
     SceneManager.LoadScene("gameover");
 }
 ```
