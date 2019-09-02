@@ -33,6 +33,7 @@ Here you'll find all kinds of handy code snippets for often used functionality.
 
 - [Setting up VS Code](https://code.visualstudio.com/docs/other/unity)
 - [Debugging with VS Code](https://www.youtube.com/watch?v=qCkFzMSILzk)
+- Under WINDOW > PACKAGE MANAGER in Unity, update the VS Code plugin to 1.1.0
 
 ### Unity Game Kit
 
