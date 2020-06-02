@@ -53,6 +53,10 @@ Getting started building a complete game without any code
 - [Animation with Audio tutorials](https://www.youtube.com/channel/UCBkub2TsbCFIfdhuxRr2Lrw/videos)
 - [BOLT : Coding with drag & drop](https://ludiq.io/bolt)
 
+### Machine Learning
+
+- [Getting started with Machine Learning in Unity](https://github.com/HR-CMGT/TLE3-machine-learning/blob/master/unity.md)
+
 #### Entity component system
 
 - [youtube introduction to ECS](https://www.youtube.com/watch?v=_U9wRgQyy6s)
