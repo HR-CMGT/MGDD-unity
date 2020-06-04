@@ -57,6 +57,10 @@ Getting started building a complete game without any code
 
 - [Getting started with Machine Learning in Unity](https://github.com/HR-CMGT/TLE3-machine-learning/blob/master/unity.md)
 
+### Augmented reality
+
+= [Vuforia AR engine](https://library.vuforia.com/articles/Training/getting-started-with-vuforia-in-unity.html)
+
 #### Entity component system
 
 - [youtube introduction to ECS](https://www.youtube.com/watch?v=_U9wRgQyy6s)
