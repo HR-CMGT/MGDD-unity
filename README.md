@@ -10,6 +10,9 @@ In this lesson we'll take our first look at the Unity editor. We will learn how 
 A handout showing the different options for 2D Physics.
 [Read more](physics.md)
 
+### Player Character
+Handling player input and checking when to jump. [Read more](player.md)
+
 ### Spritesheets
 A small tutorial on how to use spritesheets in Unity.
 [Read more](spritesheets.md)
