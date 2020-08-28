@@ -19,9 +19,9 @@ In most physics games, you'll use both on a gameObject. *If an object in a physi
 ```
 transform.position = new Vector3(3,3,0);
 ```
-- Use transform.Translate to move relative to the current position
-- Use Vector3.up, Vector3.left, etc. as shortcuts for a `new Vector3()` in that direction
-- Multiply by Time.deltaTime to prevent choppy movement caused by uneven calls to Update
+- Use transform.Translate to move relative to the current position.
+- Use Vector3.up, Vector3.left, etc. as shortcuts for a `new Vector3()` in that direction.
+- **Multiply by Time.deltaTime** to prevent choppy movement caused by uneven calls to Update!
 ```
 void Update(){
   float speed = 3f;
@@ -39,7 +39,7 @@ void Update(){
 
 - Has velocity, responds to forces and gravity
 - Move by setting a *start velocity*, and then by *applying force* during updates.
-- Use `FixedUpdate` without Time.deltaTime
+- Use `FixedUpdate` without Time.deltaTime. FixedUpdate gets called at a fixed framerate so we don't need to calculate the difference between frames.
 ```
 void Start(){
   rigidBody.velocity = new Vector3(3,3,0);
