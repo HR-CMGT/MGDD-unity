@@ -24,17 +24,17 @@ Here you'll find all kinds of handy code snippets for often used functionality.
 
 ---
 
-# Links
+## Unity Learn
+
+- [Unity Learn](https://learn.unity.com)
+- [Unity Learn Premium -free-](https://unity.com/products/learn-premium)
+
+## Links
 
 ### Using Visual Studio Code as your Code editor
 
 - [Setting up VS Code](https://code.visualstudio.com/docs/other/unity)
 - [Install MONO on MAC OS](https://www.mono-project.com/download/stable/)
-
-## Unity Learn
-
-- [Unity Learn](https://learn.unity.com)
-- [Unity Learn Premium -free-](https://unity.com/products/learn-premium)
 
 ## Documentation and tutorials
 
