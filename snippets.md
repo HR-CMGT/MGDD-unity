@@ -1,21 +1,21 @@
-## Unity Code Snippets
-Feel free to experiment! You could start by adding this empty script to a gameobject, and then add some of the examples.
+# Unity Code Snippets
+
+### Keeping Score
 ```
 using UnityEngine;
 using System.Collections;
 
 public class DemoScript : MonoBehaviour {
 
-	// this is where you put variables
-	public float score = 1f;
+	public int score = 0;
 
-	// every object has a start and update function
 	void Start() {
-	     Debug.Log("My score is " + score);
+	     Debug.Log("Start score is " + score);
 	}
 
 	void Update() {
-             Debug.Log("I am updating!");
+	     score++;
+             Debug.Log("Score is now ! + score");
 	}
 }
 ```
@@ -103,61 +103,6 @@ Create a new scene named 'gameover'. Open **File > Build Settings** and drag all
 using UnityEngine.SceneManagement;
 void OnCollisionEnter2D(Collision2D coll) {
     SceneManager.LoadScene("gameover");
-}
-```
-
-### Button input
-You can change all default key bindings in **edit > project settings > input**. Fire1, Fire2, Fire3 are mapped to Control, Option (Alt), and Command, but you can also listen to any key directly.
-```
-if (Input.GetButtonDown("Fire1")) {
-    Debug.Log("You pressed CTRL!");
-}
-if (Input.GetKeyDown("space")) {
-    Debug.Log("You pressed Space!");
-}
-if (Input.GetKey (KeyCode.W) {
-    Debug.Log("You pressed W!");
-}
-```
-
-### Mouse input
-```
-Vector2 mousePosition = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
-
-float mouseXspeed = Input.GetAxis("Mouse X");
-float mouseYspeed = Input.GetAxis("Mouse Y");
-Vector2 mouseSpeed = new Vector2(mouseXspeed, mouseYspeed);
-```
-
-### Directional input
-Horizontal and Vertical input respond to the W,A,S,D keys and the cursor keys. They return values from -1 to 1. These values are **smoothed** so that they **transition** from -1 to 0 to 1. 
-```
-float xspeed = Input.GetAxis("Horizontal");
-float yspeed = Input.GetAxis("Vertical")
-Vector2 velocity = new Vector2(xspeed, yspeed);
-```
-- If you just want to know if the key is pressed or not, you can use `GetAxisRaw()` instead of `GetAxis()`. 
-- If your character moves down and right, the direction will be **1,1**
-- That means that down+right movement is actually faster than just moving right or just moving down! (a larger distance is traveled in the same time)
-- If you want to prevent that, you can normalise the vector. **1,1** will become **0.7,0.7**
-```
-Vector3 n = new Vector3(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
-```
-
-### Adding input axes
-If you want to control two objects with different controls you need separate input axis.
-- In the input manager add input for player two by setting Axis to 20
-- Rename the two new Axis from 'cancel' to 'PlayerTwoHorizontal' and 'PlayerTwoVertical'
-- Remove "W A S D" from the default Axis and add them to your own Axis
-- Add the following code to make the input a public variable
-- In the Unity editor, change the input for player two.
-```
-public class Player : MonoBehaviour {
-	public string xAxis = "Horizontal";
-	public string yAxis = "Vertical";
-	void FixedUpdate () {
-		GetComponent<Rigidbody2D>().velocity = new Vector2(Input.GetAxis(xAxis) * Speed, Input.GetAxis(yAxis);
-	}
 }
 ```
 
