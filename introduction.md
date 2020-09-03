@@ -1,144 +1,43 @@
 # Unity Introduction
 
-Asset files for Unity Introduction lesson - Game Design and Development
+Unity Introduction workshop 4 september 2020 - Game Design and Development
 
-## How to use
+# Installing
 
-- [Download Unity](https://unity3d.com/get-unity/download) 
-- Create a new project in Unity. Choose 2D
-- Download the zip file from this repository. Place the Assets folder in your game project, overwriting the old Assets folder.
+- Create a Unity Account
+- [Download Unity Hub](https://unity3d.com/get-unity/download) 
+- From Unity Hub, download the latest Unity (2020 v1.4)
+- Create a new project in Unity. Choose 2D.
+- Open **window > package manager** and find the **"Input System"** under "all packages". Click **install**. Click "yes" to reboot.
+- Download the file [workshopstart.unitypackage](./downloads/workshopstart.unitypackage) to your desktop and double-click it. It should load the workshop assets in your own Unity environment.
 
-## Your first 2D game
+# Workshop 
 
-#### Creating sprites from images
-- Check the images in the Assets/Textures folder in Unity. 
-- Feel free to drag your own space-related images in there.
-- Check that the the texture type (in the inspector) of all images is set to `sprite`
-- Click the little arrow on an image. This will show the default sprite for that image.
-- To create multiple sprites from one image you can set **sprite mode: multiple**, and then open the sprite editor.
-- In the sprite editor click **slice** to create multiple sprites from one image.
+## PART 1 - 2D Physics basics
+- Setting the camera for a 2D view
+- Adding a **gameobject** with a **component** (sprite renderer)
+- Using the sprite editor to slice sprites
+- Setting up the scene with empty gameobjects as containers
+- Creating sprites to design a level
+- Adding physics with **colliders** and **rigidbodies**
+- Setting gravity, mass and rotation of rigidbodies
+- Adding physics materials
+- Adding enemies
+- Drag and drop scripts
+- Creating prefabs
+- Adding the player character
+- Let the camera follow the player
+- Using live variables to tweak the gameplay in play mode
 
-#### Creating empty gameobjects
-- Click on the **scene panel** and create 3 empty gameobjects: background, middleground and foreground
-- Give the background a Z position of 10, and the middleground a Z of 5. 
-- Note that the camera has a negative Z position.
+## PART 2 - Play around!
+- With these basics you should be able to design a level! Take some time to play around and get everything working.
+- Drag your own graphics and sounds into the assets folder and use them in your prototype.
 
-#### Creating 2D sprites
-You can create 2D sprites by dragging sprites from Assets/Textures onto the stage OR into the scene panel.
-- Drag the space image on to the background gameobject in the scene panel.
-- Drag one asteroid onto the middleground gameobject
-- Drag one spaceship and one enemy onto the foreground gameobject in the scene panel.
-- Make sure that the sprites themselves still have a Z position of 0. 
-
-#### Adjust the camera to the size of the background
-- Note that the camera projection is *orthographic*. This means there is no 3D perspective.
-- Set the camera size to 3. This is the height of the background image / 100. Our background image is 300 pixels high.
-- In the GAME tab, set the Game Aspect Ratio the same as your background image. Since our background image is 400x300 pixels we set the aspect ratio to 4:3
-
-#### Components
-- Click on a sprite
-- Note that it has a `transform` component and a `sprite renderer` component.
-- Note the units in `transform` : 100 pixels equals 1 unity unit. The center of the world is 0,0,0
-- Click 'Add Component' to see the whole list of available components. 
-
-#### Adding existing scripts to sprites
-- Add the **Move script** component to the Asteroid sprite
-- Click the 'play' button
-
-#### Creating prefabs
-- Create a folder named 'Prefabs' in the Assets folder.
-- Drag the *Asteroid that has the move script* from the scene into the Prefabs folder
-- Delete it from the scene
-- Now drag three asteroid prefabs back from the prefab folder onto the stage
-- Note that you can edit each prefab individually in the scene. By clicking 'apply', you apply your changes to all other prefab instances as well.
-
-#### Adding public properties
-- Open the **Move script** in the code editor
-- Change the **private Vector2** variable into a **public Vector2** variable
-- Go back to Unity, and give all asteroids a different speed. Click play.
-
-#### Add the enemy and player scripts
-- Add the `EnemyMove` script to the enemy
-- Add the `Player` script to the player
-
-#### Adding 2D physics
-For the player and enemies, we are going to need physics for accurate collision detection. 
-- Add a **Physics2D > RigidBody 2D** to the enemy and player sprites. A RigidBody makes the sprite part of the *physics simulation*
-- Add a **Physics2D > BoxCollider 2D** to the enemy and player sprites. A BoxCollider allows us to measure when the object hits something. The boxcollider can have a different shape than the sprite!
-- Run the game. What's happening?
-- Set the gravity to 0 in **EDIT > project settings > physics 2D**
-- If you don't want the objects to rotate after colliding, you can edit **RigidBody2D > Constraints > Freeze Rotation Z**
-- Create a prefab for the enemy in the same way as for asteroids
-- Add multiple enemies to the scene with different speeds
-
-#### Collisions
-- Open the **Player script** in the code editor and remove the comments in one of the two lines. 
-- Play the game and check what happens when the player collides with something.
-- Add `Debug.Log("boom")` to the collision script, to get feedback during testing.
-
-#### Multiplayer
-- Create a prefab from the player, and drag another player ship into the scene
-- Run the game and press the controls. You'll see that both ships are controlled with the same keys.
-- To give each ship its own controls, we are going to add an input axis.
-- Go to **edit > project settings > input** and set the number of Axis to 20
-- Rename the two new Axis from 'cancel' to 'PlayerTwoHorizontal' and 'PlayerTwoVertical'
-- Remove "W A S D" from the default Axis and add them to your own Axis
-- Edit the player script to make the input a public variable
-- In the Unity editor, change the input for player two to 'PlayerTwoHorizontal' and 'PlayerTwoVertical'
-```
-public class Player : MonoBehaviour {
-	public string xAxis = "Horizontal";
-	public string yAxis = "Vertical";
-	void Update () {
-		GetComponent<Rigidbody2D>().velocity = new Vector2(Input.GetAxis(xAxis) * Speed, Input.GetAxis(yAxis);
-	}
-}
-```
-
-#### Prevent friendly collisions
-
-We don't want the players to be destroyed if they hit each other. If we add bullets to the game, we don't want the player to be destroyed by their own bullets. We can use collision layers to achieve this.
-- Click any gameobject. In the top right of the editor, click **Layer > add layer**
-- Add a layer named `players`. 
-- Click both player gameobjects. In the top right of the editor, click **Layer > players**
-- Open **project settings > physics 2D** and untick the box for `players`
-- If you add bullets to your game, you can also add them to the `players` layer.
-
-#### Start screen
-
-- Create a new scene with EDIT > NEW SCENE and then EDIT > OPEN SCENE
-- Open **File > Build Settings** and drag the start scene from the Unity editor into 'scenes in build'.
-- Drag the space background and game title into the scene.
-- Add a BoxCollider2D to the title. This is needed to make the title clickable.
-- We will make the start scene respond to a button click and spacebar input. Click the title image and click ADD COMPONENT > NEW SCRIPT. Add the following code to the script:
-```
-void Update() {
-    if (Input.GetKeyDown("space")) {
-        print("space key was pressed");
-    }
-}
-
-void OnMouseDown() {
-    print("mouse was pressed");
-}
-```
-
-- Finally, instead of displaying a log message, we can use this code to go to the game scene. Replace the `print` lines with the `loadScene` line. Make sure the name of your scene is correct.
-```
-using UnityEngine.SceneManagement;
-
-void OnMouseDown() {
-    SceneManager.LoadScene("gameover");
-}
-```
-
-### Finishing the game
-Open the [code snippets page](./snippets.md) and try to add some or all of the following functionality:
-
-- Add a particle system component to make smoke emit from the space ships
-- If an enemy leaves the screen on the left side, place it back on the right side.
-- If an enemy is destroyed, create a new one
-- Make the space background scroll.
-- Keep adding asteroids to the right side of the screen, remove them when they leave the screen.
-- Add a bullet when the player presses space.
-- Let the bullet collide with enemies and asteroids.
+## PART 3 - What else can we do?
+- Switching between levels
+- Adding sounds
+- Jump through a platform in one direction
+- Adding tags to gameobjects, using sorting layers.
+- Add a collision layer under **layers** in the top right. Set collision preferences under **Project settings > physics 2D**.
+- Particles, trails
+- Adding scenes to the build. Build the game
