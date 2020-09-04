@@ -41,3 +41,12 @@ Unity Introduction workshop 4 september 2020 - Game Design and Development
 - Add a collision layer under **layers** in the top right. Set collision preferences under **Project settings > physics 2D**.
 - Particles, trails
 - Adding scenes to the build. Build the game
+
+# Troubleshooting
+
+The unitypackage won't install: 
+
+- Make sure you have installed the "Input System" package, using Window > Package Manager
+- Make sure you are in a recent version of Unity (preferably 2020).
+- Try to install the package by right-clicking "assets" in Unity, and then click "import package"
+- You can download this whole respository as a ZIP file. [Go to the main page and click the green button - download ZIP](https://github.com/HR-CMGT/MGDD-unity). The zip contains a folder called `workshop-introduction` that contains separate files.
