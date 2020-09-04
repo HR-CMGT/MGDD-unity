@@ -14,6 +14,7 @@ Unity Introduction workshop 4 september 2020 - Game Design and Development
 # Workshop 
 
 ## PART 1 - 2D Physics basics
+- Scenes, Assets, Hierarchy, keyboard shortcuts
 - Setting the camera for a 2D view
 - Adding a **gameobject** with a **component** (sprite renderer)
 - Using the sprite editor to slice sprites
