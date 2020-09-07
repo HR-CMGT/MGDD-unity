@@ -6,6 +6,10 @@ Unity workshop 8 september 2020 - Game Design and Development
 
 # Installing
 
+- Set up your favorite code editor 
+  - Visual Studio - comes with Unity
+  - [Visual Studio Code](https://code.visualstudio.com/docs/other/unity)
+  - [Jetbrains Rider](https://www.jetbrains.com/dotnet/promo/unity/)
 - Create a new 2D project from Unity Hub, using a new Unity version (2019 or 2020)
 - Install the new **Input System** in the package manager in your new Unity project
 - Download and double-click [scriptingworkshop.package](./downloads/scriptingworkshop.package) from this repository. If double-clicking does not install the assets, you can also use "import package" from the assets window in Unity.
@@ -18,6 +22,7 @@ Unity workshop 8 september 2020 - Game Design and Development
 - Using public variables
 - Using GetComponent with variables
 - Movement using transform and translate. Using Time.deltaTime.
+- Working with vectors
 - Movement using velocity and addforce. Using Fixedupdate.
 - Using Instantiate and Invokerepeating
 - Using arrays to instantiate random enemies
