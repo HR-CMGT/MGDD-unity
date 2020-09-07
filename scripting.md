@@ -12,7 +12,9 @@ Unity workshop 8 september 2020 - Game Design and Development
   - [Jetbrains Rider](https://www.jetbrains.com/dotnet/promo/unity/)
 - Create a new 2D project from Unity Hub, using a new Unity version (2019 or 2020)
 - Install the new **Input System** in the package manager in your new Unity project
-- Download and double-click [scriptingworkshop.package](./downloads/scriptingworkshop.package) from this repository. If double-clicking does not install the assets, you can also use "import package" from the assets window in Unity.
+- [Right click this link to download the scriptingworkshop.package](./downloads/scriptingworkshop.package) from this repository to your desktop. 
+- Or go to the [downloads folder](./downloads) and right click the package there. If downloading the package fails you can download this entire repository as a zip and get the **scriptingworkshop.package** from the zip. 
+- Double click the package on your desktop to install the assets. If this doesn't work, you can also use "import package" from the assets window in Unity.
 
 <br>
 
