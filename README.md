@@ -8,13 +8,24 @@
 In this lesson we'll take our first look at the Unity editor. We will learn how to use the interface, create gameobjects, and then we'll make a small 2D game with interaction, animation and physics.
 [Read more](introduction.md)
 
+<br>
+
 ## Scripting - 8 September
 In this workshop we'll look at how to add movement and interaction to your project using scripting. [Read more](scripting.md)
 
 <br>
+
+## Spritesheets - 15 September
+Learn how to animate a 2D player character with animation frames.
+
+<br>
+
+## UI - 22 September
+Learn how to create a user interface on top of the game screen.
+
 <br>
 <br>
----
+
 
 # Course materials
 
@@ -22,7 +33,7 @@ In this workshop we'll look at how to add movement and interaction to your proje
 A handout showing the different options for 2D Physics.
 [Read more](physics.md)
 
-### Player Character
+### Input and jumping
 Handling player input and checking when to jump. [Read more](player.md)
 
 ### Spritesheets
