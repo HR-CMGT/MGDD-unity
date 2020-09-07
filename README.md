@@ -1,10 +1,22 @@
 ## Game Design and Development - Hogeschool Rotterdam
 
-# Unity
+<br>
 
-### Introduction
+# Unity Workshops
+
+## Introduction - 4 September
 In this lesson we'll take our first look at the Unity editor. We will learn how to use the interface, create gameobjects, and then we'll make a small 2D game with interaction, animation and physics.
 [Read more](introduction.md)
+
+## Scripting - 8 September
+In this workshop we'll look at how to add movement and interaction to your project using scripting. [Read more](scripting.md)
+
+<br>
+<br>
+<br>
+---
+
+# Course materials
 
 ### Physics
 A handout showing the different options for 2D Physics.

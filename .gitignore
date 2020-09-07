@@ -24,6 +24,9 @@ ExportedObj/
 *.pidb.meta
 sysinfo.txt
 
+.meta
+*.meta
+
 *.apk
 
 .DS_Store

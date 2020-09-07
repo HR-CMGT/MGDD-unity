@@ -1,0 +1,27 @@
+# Workshop scripting
+
+Unity workshop 8 september 2020 - Game Design and Development
+
+<br>
+
+# Installing
+
+- Create a new 2D project from Unity Hub, using a new Unity version (2019 or 2020)
+- Install the new **Input System** in the package manager in your new Unity project
+- Download and double-click [scriptingworkshop.package](./downloads/scriptingworkshop.package) from this repository. If double-clicking does not install the assets, you can also use "import package" from the assets window in Unity.
+
+<br>
+
+# Scripting 
+
+- Adding scripts
+- Using public variables
+- Using GetComponent with variables
+- Movement using transform and translate. Using Time.deltaTime.
+- Movement using velocity and addforce. Using Fixedupdate.
+- Using Instantiate and Invokerepeating
+- Using arrays to instantiate random enemies
+- Using the new input system
+- Responding to collisions
+- Keeping score in a gamemanager
+- Switching scenes while keeping the same gamemanager
