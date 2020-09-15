@@ -11,9 +11,8 @@ In this lesson we'll take our first look at the Unity editor. We will learn how 
 ## Scripting - 8 September
 In this workshop we'll look at how to add movement and interaction to your project using scripting. [Read more](scripting.md)
 
-## Spritesheets - 15 September
-Learn how to animate a 2D player character with animation frames.
-[download package](./downloads/animationworkshop.package)
+## Animation - 15 September
+Learn how to animate a characters with timeline and spritesheet animation. [download package](./downloads/animationworkshop.package)
 
 ## UI - 22 September
 Learn how to create a user interface on top of the game screen.
