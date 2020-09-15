@@ -8,17 +8,12 @@
 In this lesson we'll take our first look at the Unity editor. We will learn how to use the interface, create gameobjects, and then we'll make a small 2D game with interaction, animation and physics.
 [Read more](introduction.md)
 
-<br>
-
 ## Scripting - 8 September
 In this workshop we'll look at how to add movement and interaction to your project using scripting. [Read more](scripting.md)
 
-<br>
-
 ## Spritesheets - 15 September
 Learn how to animate a 2D player character with animation frames.
-
-<br>
+[download package](./downloads/animationworkshop.package)
 
 ## UI - 22 September
 Learn how to create a user interface on top of the game screen.
@@ -28,6 +23,16 @@ Learn how to create a user interface on top of the game screen.
 
 
 # Course materials
+
+### Code Snippets
+Here you'll find all kinds of handy code snippets for often used functionality.
+[Read more](snippets.md)
+
+### Device and touch
+
+- Install the **new input system** under package manager
+- Install the **touch samples** (open the samples menu when installing new input system)
+- [New device simulator](https://www.youtube.com/watch?v=uokF9CmUs9c)
 
 ### Physics
 A handout showing the different options for 2D Physics.
@@ -44,20 +49,17 @@ A small tutorial on how to use spritesheets in Unity.
 Getting started with responsive UI elements.
 [Read more](canvas.md)
 
-### Code Snippets
-Here you'll find all kinds of handy code snippets for often used functionality.
-[Read more](snippets.md)
-
 ---
+
+<br>
+<br>
 
 ## Unity Learn
 
 - [Unity Learn](https://learn.unity.com)
 - [Unity Learn Premium -free-](https://unity.com/products/learn-premium)
 
-## Links
-
-### Using Visual Studio Code as your Code editor
+## Using Visual Studio Code as your Code editor
 
 - [Setting up VS Code](https://code.visualstudio.com/docs/other/unity)
 - [Install MONO on MAC OS](https://www.mono-project.com/download/stable/)
@@ -86,3 +88,5 @@ Getting started building a complete game without any code
 ## Machine Learning
 
 - [Getting started with Machine Learning in Unity](https://github.com/HR-CMGT/TLE3-machine-learning/blob/master/unity.md)
+
+
