@@ -15,7 +15,9 @@ In this workshop we'll look at how to add movement and interaction to your proje
 Learn how to animate a characters with timeline and spritesheet animation. [download package](./downloads/animationworkshop.package)
 
 ## UI - 22 September
-Learn how to create a user interface on top of the game screen.
+Learn how to create a responsive user interface on top of the game screen. Learn how to create a virtual joystick for touchscreens with the new input system. [download package](./downloads/uiworkshop_start.unitypackage)
+
+![screenshot](./screenshots/virtualjoystick.gif)
 
 <br>
 <br>
@@ -47,6 +49,15 @@ A small tutorial on how to use spritesheets in Unity.
 ### UI
 Getting started with responsive UI elements.
 [Read more](canvas.md)
+
+---
+<Br>
+<br>
+
+## Wishlist for Workshop subjects
+
+- [2D Bones Animation](https://blogs.unity3d.com/2018/11/09/getting-started-with-unitys-2d-animation-package/)
+- [2D Lighting](https://www.youtube.com/watch?v=nkgGyO9VG54) 
 
 ---
 
